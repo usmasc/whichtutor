@@ -111,7 +111,8 @@ function compareToCandidates() {
     resultsStr += '</tr>';
   }
   resultsStr += '</table>';
-  document.getElementById("test3").innerHTML = resultsStr;
+  document.getElementById("results").innerHTML = resultsStr;
+  document.getElementById("test3").innerHTML = results;
 };
 
 loadQuestions();
