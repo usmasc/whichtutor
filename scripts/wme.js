@@ -103,7 +103,7 @@ function compareToCandidates() {
       diff = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
       weightedDiff = diff*importance[j]; // Difference weighted based on importance
       diffDiff = max - weightedDiff; // Difference between the max and weightedDiff
-      results[i][j] = diffDiff/max;
+      results[i][j] = diffDiff;
       percent = Math.floor(diffDiff/max*100);
       
       resultsStr += '<td>' + percent + '%</td>';
