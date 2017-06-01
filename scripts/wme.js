@@ -92,6 +92,12 @@ function tallyImports(questionNumber,response) {
 
 function compareToCandidates() {
   var resultsStr = '<table><tr><th>Candidates</th>';
+  var max = 25;
+  var diff = 0;
+  var weightedDiff = 0;
+  var diffDiff = 0;
+  var percent = 0;
+  
   for (i = 0; i < Questions.length; i++) {
     resultsStr += '<th>' + Questions[i].Issue + '</th>';
   }
@@ -106,7 +112,7 @@ function compareToCandidates() {
       results[i][j] = diffDiff;
       percent = Math.floor(diffDiff/max*100);
       
-      resultsStr += '<td>' + percent + '%</td>';
+      resultsStr += '<td>' + percent.toString() + '%</td>';
     }
     resultsStr += '</tr>';
   }
