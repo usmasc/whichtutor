@@ -105,14 +105,18 @@ function compareToCandidates() {
   for (i = 0; i < candidates.length; i++) {
     resultsStr += '<td>' + candidates[i].name + '</td>';
     for (j = 0; j < Questions.length; j++) {
-      max = 4*importance[j]; // Maximum possible weighted difference
+      max = 4; // Maximum possible difference
       diff = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
-      weightedDiff = diff*importance[j]; // Difference weighted based on importance
-      diffDiff = max - weightedDiff; // Difference between the max and weightedDiff
-      results[i][j] = diffDiff;
+      diffDiff = max - diff; // Difference between the max and weightedDiff
       percent = Math.floor(diffDiff/max*100);
-      
       resultsStr += '<td>' + percent.toString() + '%</td>';
+      
+      weightedDiff = diffDiff*importance[j]; // Difference weighted based on importance
+      results[i][j] = weightedDiff;
+     
+      
+      
+      
     }
     resultsStr += '</tr>';
   }
