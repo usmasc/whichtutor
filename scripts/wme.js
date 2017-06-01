@@ -91,8 +91,11 @@ function tallyImports(questionNumber,response) {
 function compareToCandidates() {
   for (i = 0; i < candidates.length; i++) {
     for (j = 0; j < Questions.length; j++) {
-      max = 5*importance[j];
-      results[i][j] = (max - Math.abs(responses[j] - candidates[i].stances[j]) * importance[j])/max;
+      max = 5*importance[j]; // Maximum possible weighted difference
+      diff = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
+      weightedDiff = diff*importance[j]; // Difference weighted based on importance
+      diffDiff = max - weightedDiff; // Difference between the max and weightedDiff
+      results[i][j] = diffDiff/max;
     }
   }
   document.getElementById("test3").innerHTML = results;
