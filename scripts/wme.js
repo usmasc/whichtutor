@@ -3,12 +3,12 @@
 var candidates = [ {
   "name": "Ellie Phanta",
   "party": "Republican",
-  "stance1" : [-2,-2]
+  "stances" : [-2,-2]
   },
   {
   "name": "Jack Bass",
   "party": "Democrat",
-  "stance1" : [-2,-2]
+  "stances" : [-2,-2]
   },
   {
   "name": "Paul Stanton",
