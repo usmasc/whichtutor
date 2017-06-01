@@ -80,13 +80,13 @@ function tally(questionNumber,response) {
   //qId = 'q' + questionNumber;
   responses[questionNumber] = response;
   document.getElementById("test2").innerHTML = responses;
-  document.getElementById("test").innerHTML = 'Response Recorded';
+  document.getElementById("test").innerHTML = 'Response ' + (questionNumber+1).toString() + ' recorded';
 };
 
 function tallyImports(questionNumber,response) {
   importance[questionNumber] = response;
-  document.getElementById("test2").innerHTML = importance;
-  document.getElementById("test").innerHTML = 'Response Recorded';
+  //document.getElementById("test2").innerHTML = importance;
+  document.getElementById("test").innerHTML = 'Importance for response ' + (questionNumber+1).toString() + ' recorded';
 };
 
 function maxDiff(QuestionNumber) {
