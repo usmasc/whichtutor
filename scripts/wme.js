@@ -3,48 +3,56 @@
 var candidates = [ {
   "name": "Ellie Phanta",
   "party": "Republican",
-  "stance1" : -2
+  "stances" : [1,1]
   },
   {
   "name": "Jack Bass",
   "party": "Democrat",
-  "stance1" : -2
+  "stances" : [1,1]
   },
   {
   "name": "Paul Stanton",
   "party": "Libertarian",
-  "stance1" : 2
+  "stances" : [5,5]
   }
  ];
 
 Questions = [ 
   {
+  "Issue" : "Force",
   "Question" : "Should goods and services be provided by force?",
   "Responses" : [
-    ["Absolutely",-2],
-    ["Yes", -1],
-    ["Maybe", 0],
-    ["No", 1],
-    ["Never", 2]]
+    ["Absolutely",1],
+    ["Yes", 2],
+    ["Maybe", 3],
+    ["No", 4],
+    ["Never", 5]]
 },
    {
+  "Issue" : "Roads",
   "Question" : "Without government, Who will build the roads?",
   "Responses" : [
-    ["No one at all",-2],
-    ["Shady people you can't trust", -1],
-    ["Someone might maybe possibly", 0],
-    ["Construction companies", 1],
-    ["Where we're going, we won't need roads.", 2]]
-},            
+    ["No one at all",1],
+    ["Shady people you can't trust", 2],
+    ["Someone might maybe possibly", 3],
+    ["Construction companies", 4],
+    ["Where we're going, we won't need roads.", 5]]
+}            
 ];
 
-Imports = [["Could not care less",-2],["Don't care",-1],["Might care",0],["Care",1],["Care a lot",2]];
+Imports = [["Could not care less",1],["Don't care",2],["Might care",3],["Care",4],["Care a lot",5]];
 
 responses = [];
 importance = [];
+results = [];
+
 for (i = 0; i < Questions.length; i++) {
- responses.push(0);
- importance.push(0);
+  responses.push(3);
+  importance.push(3);
+}
+
+for (j = 0; j < candidates.length; j++) {
+  results.push(responses);
 }
 
 function loadQuestions() {
@@ -64,6 +72,7 @@ function loadQuestions() {
     }    
     chunk += '</p></div>';
   }
+  chunk += '<p><button onclick="compareToCandidates()">Calculate</button></p>';
   document.getElementById("questionArea").innerHTML = chunk;
 };
 
@@ -72,13 +81,44 @@ function tally(questionNumber,response) {
   responses[questionNumber] = response;
   document.getElementById("test").innerHTML = responses;
   //document.getElementById(qId).innerHTML = 'Response Recorded';
-}
+};
 
 function tallyImports(questionNumber,response) {
   //qId = 'q' + questionNumber;
   importance[questionNumber] = response;
   document.getElementById("test2").innerHTML = importance;
   //document.getElementById(qId).innerHTML = 'Response Recorded';
-}
+};
+
+function compareToCandidates() {
+  var resultsStr = '<table><tr><th>Candidates</th>';
+  var max = 20;
+  var diff = 0;
+  var weightedDiff = 0;
+  var diffDiff = 0;
+  var percent = 0;
+  
+  for (i = 0; i < Questions.length; i++) {
+    resultsStr += '<th>' + Questions[i].Issue + '</th>';
+  }
+  resultsStr += '</tr>';
+  for (i = 0; i < candidates.length; i++) {
+    resultsStr += '<td>' + candidates[i].name + '</td>';
+    for (j = 0; j < Questions.length; j++) {
+      max = 4*importance[j]; // Maximum possible weighted difference
+      diff = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
+      weightedDiff = diff*importance[j]; // Difference weighted based on importance
+      diffDiff = max - weightedDiff; // Difference between the max and weightedDiff
+      results[i][j] = diffDiff;
+      percent = Math.floor(diffDiff/max*100);
+      
+      resultsStr += '<td>' + percent.toString() + '%</td>';
+    }
+    resultsStr += '</tr>';
+  }
+  resultsStr += '</table>';
+  document.getElementById("results").innerHTML = resultsStr;
+  document.getElementById("test3").innerHTML = results;
+};
 
 loadQuestions();
