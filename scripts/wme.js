@@ -37,7 +37,7 @@ function loadQuestions() {
      var qr = Questions[i].Responses[j];
      chunk += '<button onclick="tally(' + i + ',' + qr[1] + ')">' + qr[0] + '</button>';
     }
-    document.getElementById("questionArea") = chunk;
+    document.getElementById("questionArea").innerHTML = chunk;
     
   }
 }
