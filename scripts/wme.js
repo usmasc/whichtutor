@@ -124,10 +124,10 @@ function compareToCandidates() {
       max = maxi(j); // Maximum possible difference
       dif = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
       
-      perc = 100 - Math.round(dif/max*100);
+      perc = 100 - Math.round(dif/max*10)*10;
       resultsStr += '<td>' + perc.toString() + '%</td>';
       
-      weightedDiff = diffDiff*importance[j]; // Difference weighted based on importance
+      weightedDiff = dif*importance[j]; // Difference weighted based on importance
       results[i][j] = weightedDiff;      
     }
     resultsStr += '</tr>';
