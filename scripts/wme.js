@@ -32,7 +32,7 @@ function loadQuestions() {
   var chunk = '';
   for (i = 0; i < Questions.length; i++) {
     chunk += '<p class="question">' + Questions[i].Question + '</p>';
-    chunk += '<p class="answers">";
+    chunk += '<p class="answers">';
     for (j = 0; j < Questions[i].Responses.length; j++) {
      var qr = Questions[i].Responses[j];
      chunk += '<button onclick="tally(' + i + ',' + qr[1] + ')">' + qr[0] + '</button>';
