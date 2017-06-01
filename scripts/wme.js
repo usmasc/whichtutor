@@ -19,6 +19,7 @@ var candidates = [ {
 
 Questions = [ 
   {
+  "Issue" : "Force",
   "Question" : "Should goods and services be provided by force?",
   "Responses" : [
     ["Absolutely",-2],
@@ -28,6 +29,7 @@ Questions = [
     ["Never", 2]]
 },
    {
+  "Issue" : "Roads",
   "Question" : "Without government, Who will build the roads?",
   "Responses" : [
     ["No one at all",-2],
@@ -89,16 +91,22 @@ function tallyImports(questionNumber,response) {
 };
 
 function compareToCandidates() {
+  var resultsStr = '<table><tr><th>Candidates</th>';
+  for (i = 0; i < Questions.length, i++) {
+    resultsStr += '<th>' + Questions[i].Issue + '</th>';
+  }
+  resultsStr += '</tr>';
   for (i = 0; i < candidates.length; i++) {
+    resultsStr += '<td>' + candidates[i].name + '</td>';
     for (j = 0; j < Questions.length; j++) {
       max = 5*importance[j]; // Maximum possible weighted difference
       diff = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
       weightedDiff = diff*importance[j]; // Difference weighted based on importance
       diffDiff = max - weightedDiff; // Difference between the max and weightedDiff
-      results[i][j] = diffDiff/max;
+      resultsStr += '<td>' + diffDiff/max + '</td>';
     }
   }
-  document.getElementById("test3").innerHTML = results;
+  document.getElementById("test3").innerHTML = resultsStr;
 };
 
 loadQuestions();
