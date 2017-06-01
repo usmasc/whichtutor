@@ -145,7 +145,7 @@ function compareToCandidates() {
 
 	
   document.getElementById("results").innerHTML = resultsStr;
-  document.getElementById("test3").innerHTML = results;
+  //document.getElementById("test3").innerHTML = results;
 
 };
 
