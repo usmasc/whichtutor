@@ -73,7 +73,7 @@ function loadQuestions() {
   }
   chunk += '<p><button onclick="compareToCandidates()">Calculate</button></p>';
   document.getElementById("questionArea").innerHTML = chunk;
-  document.getElementById("test3").innerHTML = results;
+  //document.getElementById("test3").innerHTML = results;
 };
 
 function tally(questionNumber,response) {
