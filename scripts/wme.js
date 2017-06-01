@@ -90,13 +90,29 @@ function tallyImports(questionNumber,response) {
   //document.getElementById(qId).innerHTML = 'Response Recorded';
 };
 
+function max(QuestionNumber) {
+  qa = Questions[QuestionNumber].Responses;
+  var max = 0;
+  var test = 0;
+  for (i = 1; i < qa.length; i++) {
+    for (j = 0; j < i; j++) {
+      test = Math.abs(qa[i][1] - qa[j][1]);
+      if  (test > max) {
+        max = test;
+      }
+    }
+  }
+  return max;
+};
+  
+  
 function compareToCandidates() {
   var resultsStr = '<table><tr><th>Candidates</th>';
   var max = 20;
-  var diff = 0;
+  var dif = 0;
   var weightedDiff = 0;
   var diffDiff = 0;
-  var percent = 0;
+  var perc = 0;
   
   for (i = 0; i < Questions.length; i++) {
     resultsStr += '<th>' + Questions[i].Issue + '</th>';
@@ -105,18 +121,14 @@ function compareToCandidates() {
   for (i = 0; i < candidates.length; i++) {
     resultsStr += '<td>' + candidates[i].name + '</td>';
     for (j = 0; j < Questions.length; j++) {
-      max = 4; // Maximum possible difference
-      diff = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
-      diffDiff = max - diff; // Difference between the max and weightedDiff
-      percent = Math.floor(diffDiff/max*100);
-      resultsStr += '<td>' + percent.toString() + '%</td>';
+      max = max(j); // Maximum possible difference
+      dif = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
+      
+      perc = 100 - Math.round(dif/max*100);
+      resultsStr += '<td>' + perc.toString() + '%</td>';
       
       weightedDiff = diffDiff*importance[j]; // Difference weighted based on importance
-      results[i][j] = weightedDiff;
-     
-      
-      
-      
+      results[i][j] = weightedDiff;      
     }
     resultsStr += '</tr>';
   }
