@@ -44,7 +44,7 @@ var Imports = [["Could not care less",1],["Don't care",2],["Might care",3],["Car
 var responses = [];
 var importance = [];
 var results = [];
-var perc = 50;
+var perStr = '50';
 
 for (i = 0; i < Questions.length; i++) {
   responses.push(3);
@@ -101,7 +101,6 @@ function maxDiff(QuestionNumber) {
       }
     }
   }
-
   return max;
 };
   
@@ -109,7 +108,8 @@ function calcDiff(c,q) {
   var maxD = maxDiff(q); // Maximum possible difference
   var dif = Math.abs(responses[q] - candidates[c].stances[q]); // difference between candidate score and your score 
   var wDif = (maxD-dif)*importance[q]; // Difference weighted based on importance
-  perc = 100 - (Math.round(dif / maxD * 10) * 10);
+  var perc = 100 - (Math.round(dif / maxD * 10) * 10);
+  perStr = perc.toString();
   //document.getElementById("test").innerHTML = perc;
   results[c] += wDif;
 };
@@ -130,7 +130,7 @@ function compareToCandidates() {
     resultsStr += '<tr><td>' + candidates[i].name + '</td>';
     for (j = 0; j < Questions.length; j++) {
       calcDiff(i,j);
-      resultsStr += '<td>' + perc.toString() + '%</td>';  
+      resultsStr += '<td>' + perc + '%</td>';  
     }
     resultsStr += '</tr>';
   }
