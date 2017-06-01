@@ -38,9 +38,13 @@ Questions = [
 },            
 ];
 
+Imports = [["Could not care less",-2],["Don't care",-1],["Might care",0],["Care",1],["Care a lot",2]];
+
 responses = [];
+importance = [];
 for (i = 0; i < Questions.length; i++) {
  responses.push(0);
+ importance.push(0);
 }
 
 function loadQuestions() {
@@ -53,7 +57,12 @@ function loadQuestions() {
      var qr = Questions[i].Responses[j];
      chunk += '<button onclick="tally(' + i + ',' + qr[1] + ')">' + qr[0] + '</button>';
     }
-    chunk += '</p></div>';
+    chunk += '</p>';
+    chunk += '<p class="importance">';
+    for (k = 0; k < Imports.length; k++) {
+     chunk += '<button onclick="tallyImport(' + i + ',' + Imports[k][1] + ')">' + Imports[k][0] + '</button>';
+    }    
+    chunk += </p></div>';
   }
   document.getElementById("questionArea").innerHTML = chunk;
 };
@@ -62,6 +71,13 @@ function tally(questionNumber,response) {
   //qId = 'q' + questionNumber;
   responses[questionNumber] = response;
   document.getElementById("test").innerHTML = responses;
+  //document.getElementById(qId).innerHTML = 'Response Recorded';
+}
+
+function tallyImports(questionNumber,response) {
+  //qId = 'q' + questionNumber;
+  importance[questionNumber] = response;
+  document.getElementById("test2").innerHTML = importance;
   //document.getElementById(qId).innerHTML = 'Response Recorded';
 }
 
