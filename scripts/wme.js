@@ -84,14 +84,14 @@ function tally(questionNumber,response) {
   responses[questionNumber] = response;
   document.getElementById("test").innerHTML = responses;
   //document.getElementById(qId).innerHTML = 'Response Recorded';
-}
+};
 
 function tallyImports(questionNumber,response) {
   //qId = 'q' + questionNumber;
   importance[questionNumber] = response;
   document.getElementById("test2").innerHTML = importance;
   //document.getElementById(qId).innerHTML = 'Response Recorded';
-}
+};
 
 function compareToCandidates() {
   for (i = 0; i < candidates.length; i++) {
@@ -100,6 +100,6 @@ function compareToCandidates() {
     }
   }
   document.getElementById("test").innerHTML = results;
-}
+};
 
 loadQuestions();
