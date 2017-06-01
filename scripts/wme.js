@@ -1,4 +1,3 @@
-
 // JSON example
 var candidates = [ {
   "name": "Ellie Phanta",
@@ -44,16 +43,14 @@ Imports = [["Could not care less",1],["Don't care",2],["Might care",3],["Care",4
 
 responses = [];
 importance = [];
-results = [];
 
 for (i = 0; i < Questions.length; i++) {
   responses.push(3);
   importance.push(3);
 }
 
-for (j = 0; j < candidates.length; j++) {
-  results.push(responses);
-}
+
+
 
 function loadQuestions() {
   var chunk = '';
@@ -74,6 +71,7 @@ function loadQuestions() {
   }
   chunk += '<p><button onclick="compareToCandidates()">Calculate</button></p>';
   document.getElementById("questionArea").innerHTML = chunk;
+  document.getElementById("test3").innerHTML = results;
 };
 
 function tally(questionNumber,response) {
@@ -102,20 +100,27 @@ function maxDiff(QuestionNumber) {
       }
     }
   }
+
   return max;
 };
   
-function calcDiff(i,j) {
-  var maxD = maxDiff(j); // Maximum possible difference
-  var dif = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score 
-  var wDif = dif*importance[j]; // Difference weighted based on importance
-  var perc = 100 - Math.round(dif/max*10)*10;
-  results[i][j] = wDif;
-  return perc;
+function calcDiff(c,q) {
+  var maxD = maxDiff(q); // Maximum possible difference
+  
+  var dif = Math.abs(responses[q] - candidates[c].stances[q]); // difference between candidate score and your score 
+
+  var wDif = (maxD-dif)*importance[q]; // Difference weighted based on importance
+  perc = 100 - (Math.round(dif / maxD * 10) * 10);
+  //document.getElementById("test").innerHTML = perc;
+  results[c] += wDif;
 }
   
 function compareToCandidates() {
-  var perce = 50;
+  results = [];
+  for (j = 0; j < candidates.length; j++) {
+    results.push(0);
+  }
+  
   
   var resultsStr = '<table><tr><th>Candidates</th>';
   for (i = 0; i < Questions.length; i++) {
@@ -124,10 +129,10 @@ function compareToCandidates() {
   resultsStr += '</tr>';
   
   for (i = 0; i < candidates.length; i++) {
-    resultsStr += '<td>' + candidates[i].name + '</td>';
+    resultsStr += '<tr><td>' + candidates[i].name + '</td>';
     for (j = 0; j < Questions.length; j++) {
-      perce = calcDiff(i,j);
-      resultsStr += '<td>' + perce.toString() + '%</td>';  
+      calcDiff(i,j);
+      resultsStr += '<td>' + perc.toString() + '%</td>';  
     }
     resultsStr += '</tr>';
   }
