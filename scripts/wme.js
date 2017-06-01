@@ -1,4 +1,3 @@
-
 // JSON example
 var candidates = [ {
   "name": "Ellie Phanta",
@@ -44,16 +43,14 @@ Imports = [["Could not care less",1],["Don't care",2],["Might care",3],["Care",4
 
 responses = [];
 importance = [];
-results = [];
 
 for (i = 0; i < Questions.length; i++) {
   responses.push(3);
   importance.push(3);
 }
 
-for (j = 0; j < candidates.length; j++) {
-  results.push(responses);
-}
+
+
 
 function loadQuestions() {
   var chunk = '';
@@ -74,6 +71,7 @@ function loadQuestions() {
   }
   chunk += '<p><button onclick="compareToCandidates()">Calculate</button></p>';
   document.getElementById("questionArea").innerHTML = chunk;
+  document.getElementById("test3").innerHTML = results;
 };
 
 function tally(questionNumber,response) {
@@ -90,33 +88,51 @@ function tallyImports(questionNumber,response) {
   //document.getElementById(qId).innerHTML = 'Response Recorded';
 };
 
-function compareToCandidates() {
-  var resultsStr = '<table><tr><th>Candidates</th>';
-  var max = 20;
-  var diff = 0;
-  var weightedDiff = 0;
-  var diffDiff = 0;
-  var percent = 0;
+function maxDiff(QuestionNumber) {
+  qa = Questions[QuestionNumber].Responses;
+  var max = 0;
+  var test = 0;
+  for (i = 1; i < qa.length; i++) {
+    for (j = 0; j < i; j++) {
+      test = Math.abs(qa[i][1] - qa[j][1]);
+      if  (test > max) {
+        max = test;
+      }
+    }
+  }
+
+  return max;
+};
   
+function calcDiff(c,q) {
+  var maxD = maxDiff(q); // Maximum possible difference
+  
+  var dif = Math.abs(responses[q] - candidates[c].stances[q]); // difference between candidate score and your score 
+
+  var wDif = (maxD-dif)*importance[q]; // Difference weighted based on importance
+  perc = 100 - (Math.round(dif / maxD * 10) * 10);
+  //document.getElementById("test").innerHTML = perc;
+  results[c] += wDif;
+}
+  
+function compareToCandidates() {
+  results = [];
+  for (j = 0; j < candidates.length; j++) {
+    results.push(0);
+  }
+  
+  
+  var resultsStr = '<table><tr><th>Candidates</th>';
   for (i = 0; i < Questions.length; i++) {
-    resultsStr += '<th>' + Questions[i].Issue + '</th>';
+    resultsStr += '<th>' + Questions[i].Issue + '</th>';    
   }
   resultsStr += '</tr>';
+  
   for (i = 0; i < candidates.length; i++) {
-    resultsStr += '<td>' + candidates[i].name + '</td>';
+    resultsStr += '<tr><td>' + candidates[i].name + '</td>';
     for (j = 0; j < Questions.length; j++) {
-      max = 4; // Maximum possible difference
-      diff = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
-      diffDiff = max - diff; // Difference between the max and weightedDiff
-      percent = Math.floor(diffDiff/max*100);
-      resultsStr += '<td>' + percent.toString() + '%</td>';
-      
-      weightedDiff = diffDiff*importance[j]; // Difference weighted based on importance
-      results[i][j] = weightedDiff;
-     
-      
-      
-      
+      calcDiff(i,j);
+      resultsStr += '<td>' + perc.toString() + '%</td>';  
     }
     resultsStr += '</tr>';
   }
