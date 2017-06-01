@@ -105,13 +105,7 @@ function maxDiff(QuestionNumber) {
 };
   
 function calcDiff(c,q) {
-  var maxD = maxDiff(q); // Maximum possible difference
-  var dif = Math.abs(responses[q] - candidates[c].stances[q]); // difference between candidate score and your score 
-  var wDif = (maxD-dif)*importance[q]; // Difference weighted based on importance
-  var perc = 100 - (Math.round(dif / maxD * 10) * 10);
-  perStr = perc.toString();
-  //document.getElementById("test").innerHTML = perc;
-  results[c] += wDif;
+
 };
   
 function compareToCandidates() {
@@ -121,22 +115,31 @@ function compareToCandidates() {
   }
   
   var resultsStr = '<table><tr><th>Candidates</th>';
+	
   for (i = 0; i < Questions.length; i++) {
     resultsStr += '<th>' + Questions[i].Issue + '</th>';    
   }
   resultsStr += '</tr>';
   
-  for (i = 0; i < candidates.length; i++) {
-    resultsStr += '<tr><td>' + candidates[i].name + '</td>';
-    for (j = 0; j < Questions.length; j++) {
-      calcDiff(i,j);
-      resultsStr += '<td>' + perc + '%</td>';  
+  for (c = 0; c < candidates.length; c++) {
+    resultsStr += '<tr><td>' + candidates[c].name + '</td>';
+    for (q = 0; q < Questions.length; q++) {
+	  maxD = maxDiff(q); // Maximum possible difference
+	  dif = Math.abs(responses[q] - candidates[c].stances[q]); // difference between candidate score and your score
+	  wDif = (maxD-dif)*importance[q]; // Difference weighted based on importance	
+	  perc = 100 - (Math.round(dif / maxD * 10) * 10);
+	  perStr = perc.toString();
+	  results[c] += wDif;
+      resultsStr += '<td>' + perStr + '%</td>';  
     }
     resultsStr += '</tr>';
   }
   resultsStr += '</table>';
+
+	
   document.getElementById("results").innerHTML = resultsStr;
   document.getElementById("test3").innerHTML = results;
+
 };
 
 loadQuestions();
