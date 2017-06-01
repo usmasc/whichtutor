@@ -72,7 +72,7 @@ function loadQuestions() {
     }    
     chunk += '</p></div>';
   }
-  chunk += '<p><button onclick="compareCandidates()">Calculate</button></p>';
+  chunk += '<p><button onclick="compareToCandidates()">Calculate</button></p>';
   document.getElementById("questionArea").innerHTML = chunk;
 };
 
@@ -103,9 +103,12 @@ function compareToCandidates() {
       diff = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
       weightedDiff = diff*importance[j]; // Difference weighted based on importance
       diffDiff = max - weightedDiff; // Difference between the max and weightedDiff
-      resultsStr += '<td>' + diffDiff/max + '</td>';
+      percent = Math.floor(diffDiff/max*100);
+      resultsStr += '<td>' + percent + '%</td>';
     }
+    resultsStr += '</tr>';
   }
+  resultsStr += '</table>';
   document.getElementById("test3").innerHTML = resultsStr;
 };
 
