@@ -28,11 +28,11 @@ Questions = [
     ["Never", 2]]
 },
    {
-  "Question" : "Who will build the roads?",
+  "Question" : "Without government, Who will build the roads?",
   "Responses" : [
-    ["Can't have roads without government",-2],
-    ["I doubt we could have roads without government", -1],
-    ["We might have roads maybe", 0],
+    ["No one at all",-2],
+    ["Shady people you can't trust", -1],
+    ["Someone might maybe possibly", 0],
     ["Construction companies", 1],
     ["Where we're going, we won't need roads.", 2]]
 },            
