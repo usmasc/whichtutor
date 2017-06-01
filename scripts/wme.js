@@ -47,8 +47,8 @@ importance = [];
 results = [];
 
 for (i = 0; i < Questions.length; i++) {
-  responses.push(0);
-  importance.push(0);
+  responses.push(3);
+  importance.push(3);
 }
 
 for (j = 0; j < candidates.length; j++) {
