@@ -17,7 +17,8 @@ var candidates = [ {
   }
  ];
 
-Questions = [ {
+Questions = [ 
+  {
   "Question" : "Should goods and services be provided by force?",
   "Responses" : [
     ["Absolutely",-2],
@@ -25,7 +26,16 @@ Questions = [ {
     ["Maybe", 0],
     ["No", 1],
     ["Never", 2]]
-}
+},
+   {
+  "Question" : "Who will build the roads?",
+  "Responses" : [
+    ["Can't have roads without government",-2],
+    ["I doubt we could have roads without government", -1],
+    ["We might have roads maybe", 0],
+    ["Construction companies", 1],
+    ["Where we're going, we won't need roads.", 2]]
+},            
 ];
 
 responses = [];
