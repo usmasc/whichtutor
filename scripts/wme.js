@@ -60,7 +60,7 @@ function loadQuestions() {
     chunk += '</p>';
     chunk += '<p class="importance">';
     for (k = 0; k < Imports.length; k++) {
-     chunk += '<button onclick="tallyImport(' + i + ',' + Imports[k][1] + ')">' + Imports[k][0] + '</button>';
+     chunk += '<button onclick="tallyImports(' + i + ',' + Imports[k][1] + ')">' + Imports[k][0] + '</button>';
     }    
     chunk += '</p></div>';
   }
