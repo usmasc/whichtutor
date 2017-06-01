@@ -104,9 +104,14 @@ function maxDiff(QuestionNumber) {
   return max;
 };
   
-function calcDiff(c,q) {
+function sumImport() {
+	sum = 0;
+	for (i = 0; i < importance.length; i++) {
+	  sum += importance[i];
+	}
+	return sum;
+}
 
-};
   
 function compareToCandidates() {
   results = [];
@@ -114,25 +119,27 @@ function compareToCandidates() {
     results.push(0);
   }
   
+  	totalImportance = sumImport();
   var resultsStr = '<table><tr><th>Candidates</th>';
 	
   for (i = 0; i < Questions.length; i++) {
     resultsStr += '<th>' + Questions[i].Issue + '</th>';    
   }
-  resultsStr += '</tr>';
+  resultsStr += '<th>Total</th></tr>';
   
   for (c = 0; c < candidates.length; c++) {
     resultsStr += '<tr><td>' + candidates[c].name + '</td>';
     for (q = 0; q < Questions.length; q++) {
 	  maxD = maxDiff(q); // Maximum possible difference
 	  dif = Math.abs(responses[q] - candidates[c].stances[q]); // difference between candidate score and your score
-	  wDif = (maxD-dif)*importance[q]; // Difference weighted based on importance	
+	  wDif = (1 - dif/maxD)*importance[q]; // Difference weighted based on importance	
 	  perc = 100 - (Math.round(dif / maxD * 10) * 10);
-	  perStr = perc.toString();
+	  perStr = perc.toString(); 
 	  results[c] += wDif;
       resultsStr += '<td>' + perStr + '%</td>';  
     }
-    resultsStr += '</tr>';
+	total = Math.round(results[c] / totalImportance * 10) * 10;
+    resultsStr += '<td>' + total.toString() + '%</td></tr>';
   }
   resultsStr += '</table>';
 
