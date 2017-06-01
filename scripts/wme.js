@@ -49,9 +49,10 @@ function loadQuestions() {
 };
 
 function tally(questionNumber,response) {
-  qId = 'q' + questionNumber;
+  //qId = 'q' + questionNumber;
   responses[questionNumber] = response;
-  document.getElementById(qId).innerHTML = 'Response Recorded';
+  document.getElementById("test").innerHTML = responses;
+  //document.getElementById(qId).innerHTML = 'Response Recorded';
 }
 
 loadQuestions();
