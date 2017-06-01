@@ -62,7 +62,7 @@ function loadQuestions() {
     for (k = 0; k < Imports.length; k++) {
      chunk += '<button onclick="tallyImport(' + i + ',' + Imports[k][1] + ')">' + Imports[k][0] + '</button>';
     }    
-    chunk += </p></div>';
+    chunk += '</p></div>';
   }
   document.getElementById("questionArea").innerHTML = chunk;
 };
