@@ -35,7 +35,7 @@ Questions = [
     ["Someone might maybe possibly", 0],
     ["Construction companies", 1],
     ["Where we're going, we won't need roads.", 2]]
-},            
+}            
 ];
 
 Imports = [["Could not care less",1],["Don't care",2],["Might care",3],["Care",4],["Care a lot",5]];
@@ -45,18 +45,13 @@ importance = [];
 results = [];
 
 for (i = 0; i < Questions.length; i++) {
- responses.push(0);
- importance.push(0);
-
+  responses.push(0);
+  importance.push(0);
 }
 
-  for (j = 0; j < Candidites.length; j++) {
-    arr = [];
-    for (i = 0; i < Questions.length; i++) {    
-      arr.push(0);
-    }
-    results.push(arr);
-  }
+for (j = 0; j < candidates.length; j++) {
+  results.push(responses);
+}
 
 function loadQuestions() {
   var chunk = '';
@@ -96,10 +91,11 @@ function tallyImports(questionNumber,response) {
 function compareToCandidates() {
   for (i = 0; i < candidates.length; i++) {
     for (j = 0; j < Questions.length; j++) {
-      results[i][j] = Math.abs(responses[j]-candidates[i].stances[j])*importance[j];
+      max = 5*importance[j];
+      results[i][j] = (max - Math.abs(responses[j] - candidates[i].stances[j]) * importance[j])/max;
     }
   }
-  document.getElementById("test").innerHTML = results;
+  document.getElementById("test3").innerHTML = results;
 };
 
 loadQuestions();
