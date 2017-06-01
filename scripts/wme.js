@@ -3,17 +3,17 @@
 var candidates = [ {
   "name": "Ellie Phanta",
   "party": "Republican",
-  "stances" : [-2,-2]
+  "stances" : [1,1]
   },
   {
   "name": "Jack Bass",
   "party": "Democrat",
-  "stances" : [-2,-2]
+  "stances" : [1,1]
   },
   {
   "name": "Paul Stanton",
   "party": "Libertarian",
-  "stances" : [2,2]
+  "stances" : [5,5]
   }
  ];
 
@@ -22,21 +22,21 @@ Questions = [
   "Issue" : "Force",
   "Question" : "Should goods and services be provided by force?",
   "Responses" : [
-    ["Absolutely",-2],
-    ["Yes", -1],
-    ["Maybe", 0],
-    ["No", 1],
-    ["Never", 2]]
+    ["Absolutely",1],
+    ["Yes", 2],
+    ["Maybe", 3],
+    ["No", 4],
+    ["Never", 5]]
 },
    {
   "Issue" : "Roads",
   "Question" : "Without government, Who will build the roads?",
   "Responses" : [
-    ["No one at all",-2],
-    ["Shady people you can't trust", -1],
-    ["Someone might maybe possibly", 0],
-    ["Construction companies", 1],
-    ["Where we're going, we won't need roads.", 2]]
+    ["No one at all",1],
+    ["Shady people you can't trust", 2],
+    ["Someone might maybe possibly", 3],
+    ["Construction companies", 4],
+    ["Where we're going, we won't need roads.", 5]]
 }            
 ];
 
@@ -92,7 +92,7 @@ function tallyImports(questionNumber,response) {
 
 function compareToCandidates() {
   var resultsStr = '<table><tr><th>Candidates</th>';
-  var max = 25;
+  var max = 20;
   var diff = 0;
   var weightedDiff = 0;
   var diffDiff = 0;
@@ -105,7 +105,7 @@ function compareToCandidates() {
   for (i = 0; i < candidates.length; i++) {
     resultsStr += '<td>' + candidates[i].name + '</td>';
     for (j = 0; j < Questions.length; j++) {
-      max = 5*importance[j]; // Maximum possible weighted difference
+      max = 4*importance[j]; // Maximum possible weighted difference
       diff = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
       weightedDiff = diff*importance[j]; // Difference weighted based on importance
       diffDiff = max - weightedDiff; // Difference between the max and weightedDiff
