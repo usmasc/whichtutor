@@ -40,4 +40,6 @@ function loadQuestions() {
     document.getElementById("questionArea").innerHTML = chunk;
     
   }
-}
+};
+
+loadQuestions();
