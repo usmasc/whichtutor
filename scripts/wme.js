@@ -16,7 +16,7 @@ var candidates = [ {
   }
  ];
 
-Questions = [ 
+var Questions = [ 
   {
   "Issue" : "Force",
   "Question" : "Should goods and services be provided by force?",
@@ -39,10 +39,12 @@ Questions = [
 }            
 ];
 
-Imports = [["Could not care less",1],["Don't care",2],["Might care",3],["Care",4],["Care a lot",5]];
+var Imports = [["Could not care less",1],["Don't care",2],["Might care",3],["Care",4],["Care a lot",5]];
 
-responses = [];
-importance = [];
+var responses = [];
+var importance = [];
+var results = [];
+var perc = 50;
 
 for (i = 0; i < Questions.length; i++) {
   responses.push(3);
@@ -77,15 +79,14 @@ function loadQuestions() {
 function tally(questionNumber,response) {
   //qId = 'q' + questionNumber;
   responses[questionNumber] = response;
-  document.getElementById("test").innerHTML = responses;
-  //document.getElementById(qId).innerHTML = 'Response Recorded';
+  document.getElementById("test2").innerHTML = responses;
+  document.getElementById("test").innerHTML = 'Response Recorded';
 };
 
 function tallyImports(questionNumber,response) {
-  //qId = 'q' + questionNumber;
   importance[questionNumber] = response;
   document.getElementById("test2").innerHTML = importance;
-  //document.getElementById(qId).innerHTML = 'Response Recorded';
+  document.getElementById("test").innerHTML = 'Response Recorded';
 };
 
 function maxDiff(QuestionNumber) {
@@ -106,21 +107,18 @@ function maxDiff(QuestionNumber) {
   
 function calcDiff(c,q) {
   var maxD = maxDiff(q); // Maximum possible difference
-  
   var dif = Math.abs(responses[q] - candidates[c].stances[q]); // difference between candidate score and your score 
-
   var wDif = (maxD-dif)*importance[q]; // Difference weighted based on importance
   perc = 100 - (Math.round(dif / maxD * 10) * 10);
   //document.getElementById("test").innerHTML = perc;
   results[c] += wDif;
-}
+};
   
 function compareToCandidates() {
   results = [];
   for (j = 0; j < candidates.length; j++) {
     results.push(0);
   }
-  
   
   var resultsStr = '<table><tr><th>Candidates</th>';
   for (i = 0; i < Questions.length; i++) {
