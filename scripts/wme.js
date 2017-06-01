@@ -3,17 +3,17 @@
 var candidates = [ {
   "name": "Ellie Phanta",
   "party": "Republican",
-  "stance1" : -2
+  "stance1" : [-2,-2]
   },
   {
   "name": "Jack Bass",
   "party": "Democrat",
-  "stance1" : -2
+  "stance1" : [-2,-2]
   },
   {
   "name": "Paul Stanton",
   "party": "Libertarian",
-  "stance1" : 2
+  "stances" : [2,2]
   }
  ];
 
@@ -38,14 +38,25 @@ Questions = [
 },            
 ];
 
-Imports = [["Could not care less",-2],["Don't care",-1],["Might care",0],["Care",1],["Care a lot",2]];
+Imports = [["Could not care less",1],["Don't care",2],["Might care",3],["Care",4],["Care a lot",5]];
 
 responses = [];
 importance = [];
+results = [];
+
 for (i = 0; i < Questions.length; i++) {
  responses.push(0);
  importance.push(0);
+
 }
+
+  for (j = 0; j < Candidites.length; j++) {
+    arr = [];
+    for (i = 0; i < Questions.length; i++) {    
+      arr.push(0);
+    }
+    results.push(arr);
+  }
 
 function loadQuestions() {
   var chunk = '';
@@ -64,6 +75,7 @@ function loadQuestions() {
     }    
     chunk += '</p></div>';
   }
+  chunk += '<p><button onclick="compareCandidates()">Calculate</button></p>';
   document.getElementById("questionArea").innerHTML = chunk;
 };
 
@@ -79,6 +91,15 @@ function tallyImports(questionNumber,response) {
   importance[questionNumber] = response;
   document.getElementById("test2").innerHTML = importance;
   //document.getElementById(qId).innerHTML = 'Response Recorded';
+}
+
+function compareToCandidates() {
+  for (i = 0; i < Candidates.length; i++) {
+    for (j = 0; j < Questions.length; j++) {
+      results[i][j] = Math.abs(responses[j]-Candidates.stances[j])*importance[j];
+    }
+  }
+  document.getElementById("test").innerHTML = results;
 }
 
 loadQuestions();
