@@ -94,9 +94,9 @@ function tallyImports(questionNumber,response) {
 }
 
 function compareToCandidates() {
-  for (i = 0; i < Candidates.length; i++) {
+  for (i = 0; i < candidates.length; i++) {
     for (j = 0; j < Questions.length; j++) {
-      results[i][j] = Math.abs(responses[j]-Candidates[i].stances[j])*importance[j];
+      results[i][j] = Math.abs(responses[j]-candidates[i].stances[j])*importance[j];
     }
   }
   document.getElementById("test").innerHTML = results;
