@@ -90,7 +90,7 @@ function tallyImports(questionNumber,response) {
   //document.getElementById(qId).innerHTML = 'Response Recorded';
 };
 
-function max(QuestionNumber) {
+function maxi(QuestionNumber) {
   qa = Questions[QuestionNumber].Responses;
   var max = 0;
   var test = 0;
@@ -121,7 +121,7 @@ function compareToCandidates() {
   for (i = 0; i < candidates.length; i++) {
     resultsStr += '<td>' + candidates[i].name + '</td>';
     for (j = 0; j < Questions.length; j++) {
-      max = max(j); // Maximum possible difference
+      max = maxi(j); // Maximum possible difference
       dif = Math.abs(responses[j] - candidates[i].stances[j]); // difference between candidate score and your score
       
       perc = 100 - Math.round(dif/max*100);
