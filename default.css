@@ -1,9 +1,11 @@
-    .questionArea, .results, .test {
+<style>   
+.questionArea, .results, .test {
     border-style: solid;
       border: 25px;
       border-color: "gold";
       margin: 10px;
       padding: 5px;
       font-size: 30px;
-      font-family: Monospaced;
+      font-family: Monospace, "Courier New";
     }
+</style>
