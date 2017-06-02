@@ -3,11 +3,6 @@ An open source front end web development training project. For more information,
 
 ## Work in progress
 
-An open source candidate comparison tool developed for downticket candidates. Uses JSON to make it easier for people to reuse it for different candidates and issues.
+An open source candidate comparison tool developed for downticket candidates. Uses JSON to make it easier for people to reuse it for different candidates and issues. Fork it.
 
 To test it yourself, visit: https://coders4liberty.github.io/whoWme/. 
-
-
-### Issues
-
-currently the comparison algorithm is not functioning properly.
