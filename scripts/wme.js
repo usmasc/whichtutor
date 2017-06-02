@@ -79,7 +79,7 @@ function loadQuestions() {
 function tally(questionNumber,response) {
   //qId = 'q' + questionNumber;
   responses[questionNumber] = response;
-  document.getElementById("test2").innerHTML = responses;
+  //document.getElementById("test2").innerHTML = responses;
   document.getElementById("test").innerHTML = 'Response ' + (questionNumber+1).toString() + ' recorded';
 };
 
@@ -145,7 +145,7 @@ function compareToCandidates() {
 
 	
   document.getElementById("results").innerHTML = resultsStr;
-  //document.getElementById("test3").innerHTML = results;
+  document.getElementById("test").innerHTML = '';
 
 };
 
