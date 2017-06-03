@@ -6,4 +6,12 @@
       font-size: 30px;
       font-family: Monospace, "Courier New";
     }
+button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 15px;
+      font-family: Monospace, "Courier New";
+      background-color: "gold";
+      color: "white";
+}
 </style>
