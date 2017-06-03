@@ -1,17 +1,61 @@
 <style>   
-.questionArea, .results, .test {
-      border: 5px solid lightblue;
-    margin: 10px;
-    padding: 10px;
+h3 {
       font-size: 30px;
       font-family: Monospace, "Courier New";
     }
+
+table {
+      font-size: 20px;
+      font-family: Monospace, "Courier New";
+
+}
+
+th, td {
+    padding: 15px;
+}
+
 button {
       margin: 5px;
       padding: 10px;
-      font-size: 15px;
+    	border: none;
+      font-size: 12px;
       font-family: Monospace, "Courier New";
-      background-color: "gold";
+      background-color:#333333;
+      color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button.buttonq {
+      margin: 5px;
+      padding: 10px;
+    	border: none;
+      font-size: 13px;
+      font-family: Monospace, "Courier New";
+      background-color:#ffd700;
+      color: #000000;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button.buttoni {
+      margin: 5px;
+      padding: 10px;
+    	border: none;
+      font-size: 12px;
+      font-family: Monospace, "Courier New";
+      background-color:#000000;
+      color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:after {
+      background-color: #ffd700;
       color: "white";
 }
+
 </style>
