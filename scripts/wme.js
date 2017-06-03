@@ -1,17 +1,20 @@
 // JSON example
 var candidates = [ {
-  "name": "Ellie Phanta",
+  "name": "Ellie Phant",
   "party": "Republican",
+	"race": "Senate",
   "stances" : [1,1]
   },
   {
   "name": "Jack Bass",
   "party": "Democrat",
+	"race": "Senate",
   "stances" : [1,1]
   },
   {
   "name": "Paul Stanton",
   "party": "Libertarian",
+	"race": "Senate",
   "stances" : [5,5]
   }
  ];
@@ -58,20 +61,20 @@ function loadQuestions() {
   var chunk = '';
   for (i = 0; i < Questions.length; i++) {
     chunk += '<div id="q' + i + '>'; 
-    chunk += '<p class="question">' + Questions[i].Question + '</p>';
+    chunk += '<h3 class="question">' + Questions[i].Question + '</h3>';
     chunk += '<p class="answers">';
     for (j = 0; j < Questions[i].Responses.length; j++) {
      var qr = Questions[i].Responses[j];
-     chunk += '<button onclick="tally(' + i + ',' + qr[1] + ')">' + qr[0] + '</button>';
+     chunk += '<button class="buttonq" onclick="tally(' + i + ',' + qr[1] + ')">' + qr[0] + '</button>';
     }
-    chunk += '</p>';
-    chunk += '<p class="importance">';
-    for (k = 0; k < Imports.length; k++) {
-     chunk += '<button onclick="tallyImports(' + i + ',' + Imports[k][1] + ')">' + Imports[k][0] + '</button>';
-    }    
     chunk += '</p></div>';
+    chunk += '<div id=i' + i + '><p class="importance">';
+    for (k = 0; k < Imports.length; k++) {
+     chunk += '<button class="buttoni" onclick="tallyImports(' + i + ',' + Imports[k][1] + ')">' + Imports[k][0] + '</button>';
+    }    
+    chunk += '</p></div><hr width="80%" align="left"/>';
   }
-  chunk += '<p><button onclick="compareToCandidates()">Calculate</button></p>';
+  chunk += '<p><button onclick="weightedSpectrumAnalysis()">Calculate</button></p>';
   document.getElementById("questionArea").innerHTML = chunk;
   //document.getElementById("test3").innerHTML = results;
 };
@@ -104,23 +107,24 @@ function maxDiff(QuestionNumber) {
   return max;
 };
   
-function sumImport() {
+function sumArray(arr) {
 	sum = 0;
-	for (i = 0; i < importance.length; i++) {
-	  sum += importance[i];
+	for (i = 0; i < arr.length; i++) {
+	  sum += arr[i];
 	}
 	return sum;
 }
 
   
-function compareToCandidates() {
+function weightedSpectrumAnalysis() {
+// Algorithm to compare candidates on a spectrum
   results = [];
   for (j = 0; j < candidates.length; j++) {
     results.push(0);
   }
   
-  	totalImportance = sumImport();
-  var resultsStr = '<table><tr><th>Candidates</th>';
+  	totalImportance = sumArray(importance);
+  var resultsStr = '<table><tr><th>Race</th><th>Candidates</th>';
 	
   for (i = 0; i < Questions.length; i++) {
     resultsStr += '<th>' + Questions[i].Issue + '</th>';    
@@ -128,7 +132,7 @@ function compareToCandidates() {
   resultsStr += '<th>Total</th></tr>';
   
   for (c = 0; c < candidates.length; c++) {
-    resultsStr += '<tr><td>' + candidates[c].name + '</td>';
+    resultsStr += '<tr><td>' + candidates[c].race + '</td><td>' + candidates[c].name + '</td>';
     for (q = 0; q < Questions.length; q++) {
 	  maxD = maxDiff(q); // Maximum possible difference
 	  dif = Math.abs(responses[q] - candidates[c].stances[q]); // difference between candidate score and your score
