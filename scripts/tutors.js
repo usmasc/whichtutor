@@ -13,14 +13,14 @@ var tutors = [
 		"main": ["science"],
 		"subjects": ["Chemistry"],
 		"prefsub":["Chemistry"],
-		"citations": ["APA"],
+		"citations": [],
 		"morning": ["morning run"],
 		"score": 0
   }
 ];
 
 var questionArea = document.getElementById('questionArea');
-var answerArea = document
+var resultsArea = document.getElementById('results');
 
 var questionCats = ['morning'];
 
@@ -97,7 +97,7 @@ function loadFirstQuestion() {
 	questionArea.innerHTML = chunck;
 }
 
-function loadQuestions() {
+function loadQuestions(chunck) {
 	for(var q = 0; q < Questions.length; q++) {
 		chunck += '<p>' + Questions.question + '</p><p>';
 		for (var i = 0; i < sQuestions.responses.length; i++) {
@@ -111,7 +111,7 @@ function loadQuestions() {
 
 
 function loadSecondQuestions(set) {
-	chunck = '';
+	var chunck = '';
 	for(var q = 0; q < set.length; q++) {
 		chunck += '<p>' + set[q].question + '</p><p>';
 		for (var i = 0; i < set[q].responses.length; i++) {
@@ -119,7 +119,7 @@ function loadSecondQuestions(set) {
 		}
 		chunck += '</p>';
 	}
-	loadQuestions();
+	loadQuestions(chunck);
 }
 
 
@@ -153,6 +153,7 @@ function setQ(set,q,i) {
 function scoreIt() {
 	var highScore = 0;
 	var tutorIndex = 0;
+	var chunck = '';
 	for (var t = 0; t < tutors.length; t++) {
 		if (tutors[t].main.indexOf(responses.main) > -1) {
 			if (tutors[t].subject.indexOf(responses.subject) > -1) {
@@ -177,7 +178,8 @@ function scoreIt() {
 			tutorIndex = t;
 		}
 	}
-
+	chunck = 'You should make an appointment with ' + tutors[t].name;
+	resultsArea.innerHTML = chunck;
 }
 
 function setMainArea(i) {
@@ -192,7 +194,7 @@ function setMainArea(i) {
 		loadSecondQuestions(speakingQuestions);
 	} else {
 		questionArea.innerHTML = '';
-		loadQuestions();
+		loadQuestions('');
 }
 
 loadFirstQuestion();
