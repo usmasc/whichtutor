@@ -1,24 +1,28 @@
-var tutors = [ {
-  "name": "Scott",
-	"main": ["math","stats"],
-  "subjects": ["math","stats","Calculus","Algebra","Business Calculus","business stats"],
-	"prefsub":["Business Calculus","business stats"],
-  "citations": ["APA"],
-  "morning": "bacon",
-	"score": 0
+var tutors = [ 
+	{
+		"name": "Scott",
+		"main": ["math","stats"],
+		"subjects": ["math","stats","Calculus","Algebra","Business Calculus","business stats"],
+		"prefsub":["Business Calculus","business stats"],
+		"citations": ["APA"],
+		"morning": ["bacon"],
+		"score": 0
   },
 	{
-  "name": "Casey",
-	"main": ["science"],
-  "subjects": ["Chemistry"],
-	"prefsub":["Chemistry"],
-  "citations": ["APA"],
-  "morning": "morning run",
-	"score": 0
+		"name": "Casey",
+		"main": ["science"],
+		"subjects": ["Chemistry"],
+		"prefsub":["Chemistry"],
+		"citations": ["APA"],
+		"morning": ["morning run"],
+		"score": 0
   }
- ];
+];
 
 var questionArea = document.getElementById('questionArea');
+var answerArea = document
+
+var questionCats = ['morning'];
 
 var responses = {
 	'main': '',
@@ -140,6 +144,40 @@ function sumArray(arr) {
 	  sum += arr[i];
 	}
 	return sum;
+}
+
+function setQ(set,q,i) {
+	responses.set[q].id = set[q].responses[i];
+}
+
+function scoreIt() {
+	var highScore = 0;
+	var tutorIndex = 0;
+	for (var t = 0; t < tutors.length; t++) {
+		if (tutors[t].main.indexOf(responses.main) > -1) {
+			if (tutors[t].subject.indexOf(responses.subject) > -1) {
+				tutors[t].score += 10;
+			}
+			if (tutors[t].prefsub.indexOf(responses.subject) > -1) {
+				tutors[t].score += 20;
+			}
+			if (tutors[t].cite.indexOf(responses.cite) > -1) {
+				tutors[t].score += 10;
+			}
+			for (var c = 0; c < otherCats.length; c++) {
+				if (tutors[t].otherCats[c].indexOf(responses.otherCats[c]) > -1) {
+					tutors[t].score += 1;
+				}
+			}
+		}
+	}
+	for (var t = 0; t < tutors.length; t++) {
+		if (highScore < tutors[t].score) {
+			highScore = tutors[t].score;
+			tutorIndex = t;
+		}
+	}
+
 }
 
 function setMainArea(i) {
