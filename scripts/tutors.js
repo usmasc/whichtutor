@@ -19,11 +19,25 @@ var tutors = [
   }
 ];
 
+// array of additional question catergories
+var questionCats = ['morning'];
+
+// additional questions
+var Questions = [ 
+	{
+		"id":"morning",
+  	"question" : "Your favorite part of your morning routine",
+  	"responses" : ["coffee","morning run","bacon","hot showers"]
+	}
+];
+
+
 var questionArea = document.getElementById('questionArea');
 var resultsArea = document.getElementById('results');
 
-var questionCats = ['morning'];
 
+
+// object to store responses
 var responses = {
 	'main': '',
 	'subject': '',
@@ -31,13 +45,15 @@ var responses = {
 	'morning': ''
 }
 
+// first question to determine main domain
 var firstQuestion =
 	{
 		"id":"main",
   	"question" : "What do you need help with?",
   	"responses" : ["writing","math","speaking","science","Spanish"]
 		};
-			
+
+// questions for writing domain
 var writingQuestions = [
 	{
 		"id":"subject",
@@ -51,16 +67,17 @@ var writingQuestions = [
 	}
 ];
 
+// questions for speech domain
 var speakingQuestions = [
 	{
 		"id":"subject",
 		"question" : "What subject do you need help with?",
-		"responses" : ["English","History","Science","Geography","Science","Psychology",]
+		"responses" : ["English","History","Science","Geography","Science","Psychology","other"]
 	}
 ];
 
 
-	
+	// questions for math domain
 	var mathQuestions [
 	{
 			"id":"subject",
@@ -69,7 +86,7 @@ var speakingQuestions = [
 			"responses" : ["Algebra","Calculus","Trigonometry","other"]
 	}
 	];
-
+// questions for science domain
 var scienceQuestions [
 {
 		"id":"subject",
@@ -79,34 +96,28 @@ var scienceQuestions [
 }
 ];
 
-var Questions = [ 
-	{
-		"id":"morning",
-  	"question" : "Your favorite part of your morning routine",
-  	"responses" : ["coffee","morning run","bacon","hot showers"]
-	}
-];
+
 
 function loadFirstQuestion() {
 	var chunck = '<p>';
 	chunck += firstQuestion.question + '</p><p>';
 	for (var i = 0; i < firstQuestion.responses.length; i++) {
 		chunck += '<button onclick="setMainArea(' + i + ')>' + firstQuestion.responses[i] + '</button>';
-	}
+	} // close loop
 	chunck += '</p>';
 	questionArea.innerHTML = chunck;
-}
+} // close 1st question function
 
 function loadQuestions(chunck) {
 	for(var q = 0; q < Questions.length; q++) {
 		chunck += '<p>' + Questions.question + '</p><p>';
-		for (var i = 0; i < sQuestions.responses.length; i++) {
+		for (var i = 0; i < Questions.responses.length; i++) {
 			chunck += '<button onclick="setQ(Questions,' + q + ',' + i + ')>' + Questions.responses[i] + '</button>';
-		}
+		} // close i loop
 		chunck += '</p>';
-	}
+	} // close q loop
 	questionArea.innerHTML = chunck;
-}
+} // close question function
 
 
 
@@ -116,11 +127,11 @@ function loadSecondQuestions(set) {
 		chunck += '<p>' + set[q].question + '</p><p>';
 		for (var i = 0; i < set[q].responses.length; i++) {
 			chunck += '<button onclick="setQ(' + set + ',' + q + ',' + i + ')>' + set[q].responses[i] + '</button>';
-		}
+		} // close i for
 		chunck += '</p>';
-	}
+	} // close q for
 	loadQuestions(chunck);
-}
+} // close 2nd question function
 
 
 function maxDiff(QuestionNumber) {
@@ -168,10 +179,11 @@ function scoreIt() {
 			for (var c = 0; c < otherCats.length; c++) {
 				if (tutors[t].otherCats[c].indexOf(responses.otherCats[c]) > -1) {
 					tutors[t].score += 1;
-				}
-			}
-		}
-	}
+				} // close if
+			} // close c for
+		} // cose if main subject
+	} // close t for
+
 	for (var t = 0; t < tutors.length; t++) {
 		if (highScore < tutors[t].score) {
 			highScore = tutors[t].score;
@@ -180,12 +192,12 @@ function scoreIt() {
 	}
 	chunck = 'You should make an appointment with ' + tutors[t].name;
 	resultsArea.innerHTML = chunck;
-}
+} // close score it function
 
 function setMainArea(i) {
 	responses.main = firstQuestion.responses[i];
 	if (responses.main == 'writing') {
-		loadWritingQuestions();
+		loadSecondQuestions(writingQuestions);
 	} else if (responses.main == 'math') {
 		loadSecondQuestions(mathQuestions);
 	} else if (responses.main == 'science') {
