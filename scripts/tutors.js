@@ -51,7 +51,7 @@ var firstQuestion =
 		"id":"main",
   	"question" : "What do you need help with?",
   	"responses" : ["writing","math","speaking","science","Spanish"]
-		};
+	};
 
 // questions for writing domain
 var writingQuestions = [
