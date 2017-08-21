@@ -50,7 +50,7 @@ var firstQuestion =
 	{
 		"id":"main",
   	"question" : "What do you need help with?",
-  	"responses" : ["writing","math","speaking","science","Spanish"]
+  	"responses" : ["writing", "math", "speaking", "science", "Spanish"]
 	};
 
 // questions for writing domain
@@ -58,7 +58,7 @@ var writingQuestions = [
 	{
 		"id":"subject",
 		"question" : "What subject do you need help with?",
-		"responses" : ["English","History","Science","Geography","Science","Psychology",]
+		"responses" : ["English","History","Science","Geography","Science","Psychology","other"]
 	},
 	{
 		"id":"citation",
@@ -102,7 +102,7 @@ function loadFirstQuestion() {
 	var chunck = '<p>';
 	chunck += firstQuestion.question + '</p><p>';
 	for (var i = 0; i < firstQuestion.responses.length; i++) {
-		chunck += '<button onclick="setMainArea(' + i + ')>' + firstQuestion.responses[i] + '</button>';
+		chunck += '<button onclick="setMainArea(' + i + ')">' +  firstQuestion.responses[i] + '</button>';
 	} // close loop
 	chunck += '</p>';
 	questionArea.innerHTML = chunck;
@@ -110,23 +110,27 @@ function loadFirstQuestion() {
 
 function loadQuestions(chunck) {
 	for(var q = 0; q < Questions.length; q++) {
-		chunck += '<p>' + Questions.question + '</p><p>';
-		for (var i = 0; i < Questions.responses.length; i++) {
-			chunck += '<button onclick="setQ(Questions,' + q + ',' + i + ')>' + Questions.responses[i] + '</button>';
+		chunck += '<p>' + Questions[q].question + '</p><p>';
+		for (var i = 0; i < Questions[q].responses.length; i++) {
+			chunck += '<button onclick="setQ(Questions,' + q + ',' + i + ')">' + Questions[q].responses[i] + '</button>';
 		} // close i loop
 		chunck += '</p>';
 	} // close q loop
+  chunck += '<p><button onclick="scoreIt()">Score It!</button></p>';
 	questionArea.innerHTML = chunck;
 } // close question function
 
 
 
-function loadSecondQuestions(set) {
+function loadSecondQuestions(set, setStr) {
 	var chunck = '';
 	for(var q = 0; q < set.length; q++) {
+
 		chunck += '<p>' + set[q].question + '</p><p>';
+         // document.getElementById('test').innerHTML = chunck;
 		for (var i = 0; i < set[q].responses.length; i++) {
-			chunck += '<button onclick="setQ(' + set + ',' + q + ',' + i + ')>' + set[q].responses[i] + '</button>';
+			chunck += '<button onclick="setQ(' + setStr + ',' + q + ',' + i + ')">' + set[q].responses[i] + '</button>';
+     // document.getElementById('test').innerHTML = set;
 		} // close i for
 		chunck += '</p>';
 	} // close q for
@@ -158,11 +162,16 @@ function sumArray(arr) {
 }
 
 function setQ(set,q,i) {
-	responses.set[q].id = set[q].responses[i];
+  var thingie = set[q].id;
+	responses[set[q].id] = set[q].responses[i];
+  document.getElementById('test').innerHTML = responses[set[q].id];
 }
 
 function scoreIt() {
+  document.getElementById('test').innerHTML = tutors[0][questionCats[0]];
+ 
 	var highScore = 0;
+
 	var tutorIndex = 0;
 	var chunck = '';
 	for (var t = 0; t < tutors.length; t++) {
@@ -173,16 +182,22 @@ function scoreIt() {
 			if (tutors[t].prefsub.indexOf(responses.subject) > -1) {
 				tutors[t].score += 20;
 			}
-			if (tutors[t].cite.indexOf(responses.cite) > -1) {
-				tutors[t].score += 10;
+      if (responses.main == 'writing') {
+        if (tutors[t].cite.indexOf(responses.cite) > -1) {
+          tutors[t].score += 10;
+        }
 			}
 			for (var c = 0; c < otherCats.length; c++) {
-				if (tutors[t].otherCats[c].indexOf(responses.otherCats[c]) > -1) {
+				if (tutors[t][questionCats[c]].indexOf(responses[questionCats[c]]) > -1) {
+
 					tutors[t].score += 1;
 				} // close if
 			} // close c for
 		} // cose if main subject
 	} // close t for
+  
+    document.getElementById('test').innerHTML = tutors[tutorIndex].name + ' ' + highScore;
+     
 
 	for (t = 0; t < tutors.length; t++) {
 		if (highScore < tutors[t].score) {
@@ -192,20 +207,23 @@ function scoreIt() {
 	}
 	chunck = 'You should make an appointment with ' + tutors[t].name;
 	resultsArea.innerHTML = chunck;
+  
 } // close score it function
+
 
 function setMainArea(i) {
 	responses.main = firstQuestion.responses[i];
+  document.getElementById('test').innerHTML = responses.main;
 	if (responses.main == 'writing') {
-		loadSecondQuestions(writingQuestions);
+		loadSecondQuestions(writingQuestions, 'writingQuestions');
 	} else if (responses.main == 'math') {
-		loadSecondQuestions(mathQuestions);
+		loadSecondQuestions(mathQuestions, 'mathQuestions');
 	} else if (responses.main == 'science') {
-		loadScecondQuestions(scienceQuestions);
+		loadScecondQuestions(scienceQuestions, 'scienceQuestions');
 	} else if (responses.main == 'speaking') {
-		loadSecondQuestions(speakingQuestions);
+		loadSecondQuestions(speakingQuestions, 'speakingQuestions');
 	} else {
-		questionArea.innerHTML = '';
+		//questionArea.innerHTML = '';
 		loadQuestions('');
   }
 }
