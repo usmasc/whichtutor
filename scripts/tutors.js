@@ -43,7 +43,7 @@ var responses = {
 	'subject': '',
 	'cite': '',
 	'morning': ''
-}
+};
 
 // first question to determine main domain
 var firstQuestion =
@@ -78,7 +78,7 @@ var speakingQuestions = [
 
 
 	// questions for math domain
-	var mathQuestions [
+	var mathQuestions = [
 	{
 			"id":"subject",
 			"cat": "math",
@@ -87,7 +87,7 @@ var speakingQuestions = [
 	}
 	];
 // questions for science domain
-var scienceQuestions [
+var scienceQuestions = [
 {
 		"id":"subject",
 		"cat": "science",
@@ -147,7 +147,7 @@ function maxDiff(QuestionNumber) {
     }
   }
   return max;
-};
+}
   
 function sumArray(arr) {
 	sum = 0;
@@ -184,7 +184,7 @@ function scoreIt() {
 		} // cose if main subject
 	} // close t for
 
-	for (var t = 0; t < tutors.length; t++) {
+	for (t = 0; t < tutors.length; t++) {
 		if (highScore < tutors[t].score) {
 			highScore = tutors[t].score;
 			tutorIndex = t;
@@ -207,6 +207,7 @@ function setMainArea(i) {
 	} else {
 		questionArea.innerHTML = '';
 		loadQuestions('');
+  }
 }
 
 loadFirstQuestion();
