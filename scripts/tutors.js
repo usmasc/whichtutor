@@ -169,6 +169,7 @@ function setQ(set,q,i) {
 
 function scoreIt() {
   document.getElementById('test').innerHTML = tutors[0].main.indexOf(responses.main);
+	/*
 	var highScore = 0;
 	var tutorIndex = 0;
 	var chunck = '';
@@ -208,7 +209,7 @@ function scoreIt() {
   document.getElementById('test').innerHTML = tutors[tutorIndex].name + ' ' + highScore;
 	chunck = 'You should make an appointment with ' + tutors[tutorIndex].name;
 	resultsArea.innerHTML = chunck;
-  
+  */
 } // close score it function
 
 
