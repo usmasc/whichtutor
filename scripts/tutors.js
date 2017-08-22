@@ -169,17 +169,8 @@ function setQ(set,q,i) {
 
 function scoreIt() {
 	var chunck = '';
-	chunck += tutors[0].name + ' main: '    + responses.main    + ' ' + tutors[0].main.indexOf(responses.main) + '<br>';
-	/*
-	chunck += tutors[0].name + ' subject: ' + responses.subject + ' ' + tutors[0].subject.indexOf(responses.subject) + '<br>';
-	chunck += tutors[0].name + ' prefsub: ' + responses.subject + ' ' + tutors[0].prefsub.indexOf(responses.subject) + '<br>';
-	chunck += tutors[0].name + ' morning: ' + responses.morning + ' ' + tutors[0].morning.indexOf(responses.morning) + '<br>';
-	*/
-	document.getElementById('test').innerHTML = chunck;
-	/*
 	var highScore = 0;
 	var tutorIndex = 0;
-
   
 	for (var t = 0; t < tutors.length; t++) {
 		if (tutors[t].main.indexOf(responses.main) > -1) {
@@ -194,11 +185,13 @@ function scoreIt() {
           tutors[t].score += 10;
         }
 			}
+			/*
 			for (var c = 0; c < otherCats.length; c++) {
 				if (tutors[t][questionCats[c]].indexOf(responses[questionCats[c]]) > -1) {
 					tutors[t].score += 1;
 				} // close if
 			} // close c for
+			*/
 		} // cose if main subject
 	} // close t for
   
