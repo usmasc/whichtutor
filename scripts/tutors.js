@@ -168,7 +168,7 @@ function setQ(set,q,i) {
 }
 
 function scoreIt() {
-  document.getElementById('test').innerHTML = tutors[0].main.indexOf('math');
+  document.getElementById('test').innerHTML = tutors[0].main.indexOf(responses.main);
 	/*
 	var highScore = 0;
 	var tutorIndex = 0;
