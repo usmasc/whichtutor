@@ -1,4 +1,9 @@
-<style>   
+<style> 
+p {
+      font-size: 20px;
+      font-family: Monospace, "Courier New";
+
+}
 h3 {
       font-size: 30px;
       font-family: Monospace, "Courier New";
