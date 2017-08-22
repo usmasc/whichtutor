@@ -205,7 +205,7 @@ function scoreIt() {
 			tutorIndex = t;
 		}
 	}
-	chunck = 'You should make an appointment with ' + tutors[t].name;
+	chunck = 'You should make an appointment with ' + tutors[tutorIndex].name;
 	resultsArea.innerHTML = chunck;
   
 } // close score it function
