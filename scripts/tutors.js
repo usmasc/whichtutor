@@ -189,14 +189,13 @@ function scoreIt() {
 			}
 			for (var c = 0; c < otherCats.length; c++) {
 				if (tutors[t][questionCats[c]].indexOf(responses[questionCats[c]]) > -1) {
-
 					tutors[t].score += 1;
 				} // close if
 			} // close c for
 		} // cose if main subject
 	} // close t for
   
-    document.getElementById('test').innerHTML = tutors[tutorIndex].name + ' ' + highScore;
+
      
 
 	for (t = 0; t < tutors.length; t++) {
@@ -205,6 +204,7 @@ function scoreIt() {
 			tutorIndex = t;
 		}
 	}
+  document.getElementById('test').innerHTML = tutors[tutorIndex].name + ' ' + highScore;
 	chunck = 'You should make an appointment with ' + tutors[tutorIndex].name;
 	resultsArea.innerHTML = chunck;
   
