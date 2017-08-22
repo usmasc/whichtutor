@@ -10,10 +10,10 @@ var tutors = [
   },
 	{
 		"name": "Casey",
-		"main": ["science"],
+		"main": ["Chemistry"],
 		"subjects": ["Chemistry"],
 		"prefsub":["Chemistry"],
-		"citations": [],
+		"cite": [],
 		"morning": ["morning run"],
 		"score": 0
   }
@@ -50,7 +50,7 @@ var firstQuestion =
 	{
 		"id":"main",
   	"question" : "What do you need help with?",
-  	"responses" : ["writing", "math", "speaking", "science", "Spanish"]
+  	"responses" : ["writing", "math", "speaking", "Spanish", "Chemistry", "Biology","Geography","Psychology","Research methods"]
 	};
 
 // questions for writing domain
@@ -83,7 +83,7 @@ var mathQuestions = [
 			"id":"subject",
 			"cat": "math",
 			"question" : "What subject do you need help with?",
-			"responses" : ["Algebra","Calculus","Trigonometry","other"]
+			"responses" : ["Algebra","Calculus","Trigonometry","Business Calculus","business stats","other"]
 	}
 ];
 // questions for science domain
@@ -168,38 +168,40 @@ function setQ(set,q,i) {
 }
 
 function scoreIt() {
+  
+ // document.getElementById('test').innerHTML = tutors[0][questionCats[0]].indexOf(responses[questionCats[0]]);
+  
 	var chunck = '';
 	var highScore = 0;
 	var tutorIndex = 0;
   
 	for (var t = 0; t < tutors.length; t++) {
 		if (tutors[t].main.indexOf(responses.main) > -1) {
-			if (tutors[t].subject.indexOf(responses.subject) > -1) {
+       tutors[t].score += 1;
+			if (tutors[t]['subjects'].indexOf(responses['subject']) > -1) {
 				tutors[t].score += 10;
 			}
-			if (tutors[t].prefsub.indexOf(responses.subject) > -1) {
+      
+     
+			if (tutors[t]['prefsub'].indexOf(responses['subject']) > -1) {
 				tutors[t].score += 20;
 			}
       if (responses.main == 'writing') {
-        if (tutors[t].cite.indexOf(responses.cite) > -1) {
+        if (tutors[t]['cite'].indexOf(responses['cite']) > -1) {
           tutors[t].score += 10;
         }
 			}
-			/*
-			for (var c = 0; c < otherCats.length; c++) {
+			for (var c = 0; c < questionCats.length; c++) {
 				if (tutors[t][questionCats[c]].indexOf(responses[questionCats[c]]) > -1) {
 					tutors[t].score += 1;
 				} // close if
 			} // close c for
-			*/
+
 		} // cose if main subject
 	} // close t for
   
-   document.getElementById('test').innerHTML = tutors[0][score];
+   document.getElementById('test').innerHTML = tutors[0].score;
   
-
-     
-
 	for (t = 0; t < tutors.length; t++) {
 		if (highScore < tutors[t].score) {
 			highScore = tutors[t].score;
@@ -209,7 +211,8 @@ function scoreIt() {
   document.getElementById('test').innerHTML = tutors[tutorIndex].name + ' ' + highScore;
 	chunck = 'You should make an appointment with ' + tutors[tutorIndex].name;
 	resultsArea.innerHTML = chunck;
-  */
+ 
+
 } // close score it function
 
 
