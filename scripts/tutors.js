@@ -78,22 +78,22 @@ var speakingQuestions = [
 
 
 	// questions for math domain
-	var mathQuestions = [
+var mathQuestions = [
 	{
 			"id":"subject",
 			"cat": "math",
 			"question" : "What subject do you need help with?",
 			"responses" : ["Algebra","Calculus","Trigonometry","other"]
 	}
-	];
+];
 // questions for science domain
 var scienceQuestions = [
-{
-		"id":"subject",
-		"cat": "science",
-		"question" : "What subject do you need help with?",
-		"responses" : ["Chemistry","Biology","Geography","Psychology","other"]
-}
+  {
+      "id":"subject",
+      "cat": "science",
+      "question" : "What subject do you need help with?",
+      "responses" : ["Chemistry","Biology","Geography","Psychology","other"]
+  }
 ];
 
 
@@ -168,12 +168,12 @@ function setQ(set,q,i) {
 }
 
 function scoreIt() {
-  document.getElementById('test').innerHTML = tutors[0][questionCats[0]];
+
  
 	var highScore = 0;
-
 	var tutorIndex = 0;
 	var chunck = '';
+  
 	for (var t = 0; t < tutors.length; t++) {
 		if (tutors[t].main.indexOf(responses.main) > -1) {
 			if (tutors[t].subject.indexOf(responses.subject) > -1) {
@@ -194,6 +194,8 @@ function scoreIt() {
 			} // close c for
 		} // cose if main subject
 	} // close t for
+  
+   document.getElementById('test').innerHTML = tutors[0][score];
   
 
      
