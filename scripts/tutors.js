@@ -11,10 +11,136 @@ var tutors = [
 	{
 		"name": "Casey",
 		"main": ["Chemistry"],
-		"subjects": ["Chemistry"],
-		"prefsub":["Chemistry"],
+		"subjects": ["Chemistry","CHEM 100","CHEM 104"],
+		"prefsub":[],
 		"cite": [],
 		"morning": ["morning run"],
+		"score": 0
+  },
+  	{
+		"name": "Adam",
+		"main": ["Geography",'speaking','writing'],
+		"subjects": ["Geography"],
+		"prefsub":["Geography"],
+		"cite": [],
+		"morning": [],
+		"score": 0
+  },
+  	{
+		"name": "Aleysh",
+		"main": ['Chemistry'],
+		"subjects": ['Chemistry',"CHEM 100","CHEM 104"],
+		"prefsub":['Chemistry'],
+		"cite": [],
+		"morning": [],
+		"score": 0
+  },	
+  {
+		"name": "Dane",
+		"main": ["math","writing"],
+		"subjects": ["math","Calculus","Algebra","Business Calculus"],
+		"prefsub":[],
+		"citations": [],
+		"morning": ["bacon"],
+		"score": 0
+  },
+  {
+		"name": "Grace",
+		"main": ['Chemistry'],
+		"subjects": ['Chemistry',"CHEM 100","CHEM 104"],
+		"prefsub":['Chemistry'],
+		"cite": [],
+		"morning": [],
+		"score": 0
+  },	
+   {
+		"name": "Heather",
+		"main": ['Bilogy'],
+		"subjects": ['Bilogy'],
+		"prefsub":['Bilogy'],
+		"cite": [],
+		"morning": [],
+		"score": 0
+  },
+  	{
+		"name": "Saurabh",
+		"main": ["stats",'SPSS','Research methods'],
+		"subjects": ["stats",'SPSS','Research methods'],
+		"prefsub":["stats",'SPSS','Research methods'],
+		"citations": [],
+		"morning": [],
+		"score": 0
+  },
+    {
+		"name": "Teneala",
+		"main": ["math","Spanish","Computer Science"],
+		"subjects": ["math","Calculus","Algebra","Business Calculus","Spanish"],
+		"prefsub":[],
+		"citations": [],
+		"morning": [],
+		"score": 0
+  },
+  {
+		"name": "Zachary Stewart",
+		"main": ["speaking","writing"],
+		"subjects": ["speaking","writing","Political Science","History"],
+		"prefsub":["Political Science",],
+		"citations": [],
+		"morning": [],
+		"score": 0
+  },
+  {
+		"name": "Elizabeth",
+		"main": ["math"],
+		"subjects": ["math","Calculus","Algebra","Business Calculus"],
+		"prefsub":[],
+		"citations": [],
+		"morning": [],
+		"score": 0
+  },
+  {
+		"name": "Samantha",
+		"main": ['Chemistry'],
+		"subjects": ['Chemistry',"CHEM 100","CHEM 104"],
+		"prefsub":['Chemistry'],
+		"cite": [],
+		"morning": [],
+		"score": 0
+  },
+  {
+		"name": "Veronica",
+		"main": ["math"],
+		"subjects": ["math","Calculus","Algebra","Business Calculus"],
+		"prefsub":[],
+		"citations": [],
+		"morning": [],
+		"score": 0
+  },
+  {
+		"name": "Zachary Ransom",
+		"main": ["speaking","writing","Psychology"],
+		"subjects": ["speaking","writing","Psychology"],
+		"prefsub":["Psychology"],
+		"citations": [],
+		"morning": [],
+		"score": 0
+  },
+  {
+		"name": "Jonathan",
+		"main": ["writing","Spanish"],
+		"subjects": ["speaking","writing","Spanish"],
+		"prefsub":[],
+		"citations": [],
+		"morning": [],
+		"score": 0
+  },
+    {
+		"name": "Leah",
+		"main": ["speaking","writing"],
+		"subjects": ["English","Education"],
+		"prefsub":[],
+		"citations": [],
+		"morning": [],
 		"score": 0
   }
 ];
@@ -27,7 +153,7 @@ var Questions = [
 	{
 		"id":"morning",
   	"question" : "Your favorite part of your morning routine",
-  	"responses" : ["coffee","morning run","bacon","hot showers"]
+  	"responses" : ["coffee","morning run","bacon"]
 	}
 ];
 
