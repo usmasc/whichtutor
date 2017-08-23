@@ -304,7 +304,7 @@ function scoreIt() {
 		} // cose if main subject
 	} // close t for
   
-   document.getElementById('test').innerHTML = tutors[0].score;
+  // document.getElementById('test').innerHTML = tutors[0].score;
   
 	for (t = 0; t < tutors.length; t++) {
 		if (highScore < tutors[t].score) {
