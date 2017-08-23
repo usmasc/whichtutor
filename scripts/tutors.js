@@ -342,9 +342,9 @@ function setMainArea(i) {
 	if (responses.main == 'writing') {
 		loadSecondQuestions(writingQuestions, 'writingQuestions');
 	} else if (responses.main == 'math') {
-		loadSecondQuestions(mathQuestions, 'mathQuestions');
+		loadSecondQuestions(mathQuestions, 'mathQuestions');d
 	} else if (responses.main == 'stats') {
-		loadScecondQuestions(statsQuestions, 'statsQuestions');
+		loadSecondQuestions(statsQuestions, 'statsQuestions');
 	} else if (responses.main == 'speaking') {
 		loadSecondQuestions(speakingQuestions, 'speakingQuestions');
 	} else {
