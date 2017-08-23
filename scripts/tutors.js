@@ -264,14 +264,14 @@ var resultsArea = document.getElementById("results");
 
 // object to store responses
 var responses = {
-  main: "",
-  subject: "",
-  cite: "",
-  morning: "",
-  turtle: "",
-  artist: "",
-  pony: "",
-  titan: ""
+  'main': "",
+  'subject': "",
+  'cite': "",
+  'morning': "",
+  'turtle': "",
+  'artist': "",
+  'pony': "",
+  'titan': ""
 };
 
 // first question to determine main domain
@@ -430,7 +430,15 @@ function loadSecondQuestions(set, setStr) {
 function setQ(set, q, i) {
   var thingie = set[q].id;
   responses[set[q].id] = set[q].responses[i];
-  document.getElementById("test").innerHTML = responses[set[q].id];
+    // test code
+    var testThing = 'main: ' + responses.main + ', ';
+    testThing += 'subject: ' + responses.subject + ', ';
+    testThing += 'citation: ' + responses.cite + ', ';
+    for (var i = 0; i < questionCat.length; i++) {
+    testThing +=  questionCat[i] + ': ' + responses[questionCat[i]] + ', ';
+    }
+    document.getElementById("test").innerHTML =  testThing ;
+    // end test code
 }
 
 function scoreIt() {
