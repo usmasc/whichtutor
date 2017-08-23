@@ -117,6 +117,7 @@ function loadQuestions(chunck) {
 		chunck += '</p>';
 	} // close q loop
   chunck += '<p><button onclick="scoreIt()">Score It!</button></p>';
+	chunck += '<p><button onclick="scoreIt()">Score It!</button></p>';
 	questionArea.innerHTML = chunck;
 } // close question function
 
@@ -136,30 +137,6 @@ function loadSecondQuestions(set, setStr) {
 	} // close q for
 	loadQuestions(chunck);
 } // close 2nd question function
-
-
-function maxDiff(QuestionNumber) {
-  qa = Questions[QuestionNumber].Responses;
-  var max = 0;
-  var test = 0;
-  for (i = 1; i < qa.length; i++) {
-    for (j = 0; j < i; j++) {
-      test = Math.abs(qa[i][1] - qa[j][1]);
-      if  (test > max) {
-        max = test;
-      }
-    }
-  }
-  return max;
-}
-  
-function sumArray(arr) {
-	sum = 0;
-	for (i = 0; i < arr.length; i++) {
-	  sum += arr[i];
-	}
-	return sum;
-}
 
 function setQ(set,q,i) {
   var thingie = set[q].id;
