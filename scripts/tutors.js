@@ -1,3 +1,7 @@
+var prefPoints = 5; // points for preferred subject
+var subPoints = 10; // points for subject
+var OQpoints = 1; // other question points
+
 var tutors = [ 
 	{
 		"name": "Scott",
@@ -294,12 +298,12 @@ function scoreIt() {
 		if (tutors[t].main.indexOf(responses.main) > -1) {
        tutors[t].score += 1;
 			if (tutors[t]['subjects'].indexOf(responses['subject']) > -1) {
-				tutors[t].score += 10;
+				tutors[t].score += subPoints;
 			}
       
      
 			if (tutors[t]['prefsub'].indexOf(responses['subject']) > -1) {
-				tutors[t].score += 20;
+				tutors[t].score += prefPoints;
 			}
       if (responses.main == 'writing') {
         if (tutors[t]['cite'].indexOf(responses['cite']) > -1) {
@@ -308,7 +312,7 @@ function scoreIt() {
 			}
 			for (var c = 0; c < questionCats.length; c++) {
 				if (tutors[t][questionCats[c]].indexOf(responses[questionCats[c]]) > -1) {
-					tutors[t].score += 1;
+					tutors[t].score += OQpoints;
 				} // close if
 			} // close c for
 
