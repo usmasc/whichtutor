@@ -83,7 +83,7 @@ var tutors = [
 		"cite": ['MLA'],
 		"morning": [],
 		"score": 0
-  }
+  },
 	{
 		"name": "Samantha",
 		"main": ['Chemistry'],
@@ -216,7 +216,7 @@ var mathQuestions = [
 		"responses" : ["Algebra","Calculus","Trigonometry","Business Calculus","business stats","other"]
 	}
 ];
-/*
+
 
 var statsQuestions = [
 	{
@@ -226,7 +226,7 @@ var statsQuestions = [
 		"responses" : ["prob and stats", "business stats","SPSS"]
 	}
 ];
-*/
+
 
 // questions for science domain
 var scienceQuestions = [
@@ -344,10 +344,10 @@ function setMainArea(i) {
 		loadSecondQuestions(writingQuestions, 'writingQuestions');
 	} else if (responses.main == 'math') {
 		loadSecondQuestions(mathQuestions, 'mathQuestions');
-		/*
+		
 	} else if (responses.main == 'stats') {
 		loadSecondQuestions(statsQuestions, 'statsQuestions');
-		*/
+	
 	} else if (responses.main == 'speaking') {
 		loadSecondQuestions(speakingQuestions, 'speakingQuestions');
 	} else {
