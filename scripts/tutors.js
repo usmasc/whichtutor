@@ -17,7 +17,7 @@ var tutors = [
 		"morning": ["morning run"],
 		"score": 0
   },
-  	{
+  {
 		"name": "Adam",
 		"main": ["Geography",'speaking','writing'],
 		"subjects": ["Geography"],
@@ -26,7 +26,7 @@ var tutors = [
 		"morning": [],
 		"score": 0
   },
-  	{
+  {
 		"name": "Aleysh",
 		"main": ['Chemistry'],
 		"subjects": ['Chemistry',"CHEM 100","CHEM 104"],
@@ -40,7 +40,7 @@ var tutors = [
 		"main": ["math","writing"],
 		"subjects": ["math","Calculus","Algebra","Business Calculus"],
 		"prefsub":[],
-		"citations": [],
+		"cite": [],
 		"morning": ["bacon"],
 		"score": 0
   },
@@ -53,7 +53,7 @@ var tutors = [
 		"morning": [],
 		"score": 0
   },	
-   {
+  {
 		"name": "Heather",
 		"main": ['Bilogy'],
 		"subjects": ['Bilogy'],
@@ -62,21 +62,21 @@ var tutors = [
 		"morning": [],
 		"score": 0
   },
-  	{
+  {
 		"name": "Saurabh",
 		"main": ["stats",'SPSS','Research methods'],
 		"subjects": ["stats",'SPSS','Research methods'],
 		"prefsub":["stats",'SPSS','Research methods'],
-		"citations": [],
+		"cite": [],
 		"morning": [],
 		"score": 0
   },
-    {
+ {
 		"name": "Teneala",
 		"main": ["math","Spanish","Computer Science"],
 		"subjects": ["math","Calculus","Algebra","Business Calculus","Spanish"],
 		"prefsub":[],
-		"citations": [],
+		"cite": [],
 		"morning": [],
 		"score": 0
   },
@@ -84,8 +84,8 @@ var tutors = [
 		"name": "Zachary Stewart",
 		"main": ["speaking","writing"],
 		"subjects": ["speaking","writing","Political Science","History"],
-		"prefsub":["Political Science",],
-		"citations": [],
+		"prefsub":["Political Science"],
+		"cite": [],
 		"morning": [],
 		"score": 0
   },
@@ -94,7 +94,7 @@ var tutors = [
 		"main": ["math"],
 		"subjects": ["math","Calculus","Algebra","Business Calculus"],
 		"prefsub":[],
-		"citations": [],
+		"cite": [],
 		"morning": [],
 		"score": 0
   },
@@ -112,7 +112,7 @@ var tutors = [
 		"main": ["math"],
 		"subjects": ["math","Calculus","Algebra","Business Calculus"],
 		"prefsub":[],
-		"citations": [],
+		"cite": [],
 		"morning": [],
 		"score": 0
   },
@@ -121,7 +121,7 @@ var tutors = [
 		"main": ["speaking","writing","Psychology"],
 		"subjects": ["speaking","writing","Psychology"],
 		"prefsub":["Psychology"],
-		"citations": [],
+		"cite": ['APA'],
 		"morning": [],
 		"score": 0
   },
@@ -130,7 +130,7 @@ var tutors = [
 		"main": ["writing","Spanish"],
 		"subjects": ["speaking","writing","Spanish"],
 		"prefsub":[],
-		"citations": [],
+		"cite": [],
 		"morning": [],
 		"score": 0
   },
@@ -139,7 +139,7 @@ var tutors = [
 		"main": ["speaking","writing"],
 		"subjects": ["English","Education"],
 		"prefsub":[],
-		"citations": [],
+		"cite": ['MLA'],
 		"morning": [],
 		"score": 0
   }
@@ -206,10 +206,10 @@ var speakingQuestions = [
 	// questions for math domain
 var mathQuestions = [
 	{
-			"id":"subject",
-			"cat": "math",
-			"question" : "What subject do you need help with?",
-			"responses" : ["Algebra","Calculus","Trigonometry","Business Calculus","business stats","other"]
+		"id":"subject",
+		"cat": "math",
+		"question" : "What subject do you need help with?",
+		"responses" : ["Algebra","Calculus","Trigonometry","Business Calculus","business stats","other"]
 	}
 ];
 // questions for science domain
@@ -243,7 +243,7 @@ function loadQuestions(chunck) {
 		chunck += '</p>';
 	} // close q loop
   chunck += '<p><button onclick="scoreIt()">Score It!</button></p>';
-	chunck += '<p><button onclick="scoreIt()">Score It!</button></p>';
+	chunck += '<p><button onclick="loadFirstQuestion()">Reset</button></p>';
 	questionArea.innerHTML = chunck;
 } // close question function
 
