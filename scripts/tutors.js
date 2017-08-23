@@ -399,8 +399,8 @@ function loadQuestions(chunck) {
     } // close i loop
     chunck += "</p>";
   } // close q loop
-  chunck += '<p><button onclick="scoreIt()">Score It!</button> ';
-  chunck += '<button onclick="loadFirstQuestion()">Reset</button></p>';
+  chunck += '<p><button onclick="scoreIt()" class="scorebtn">Score It!</button> ';
+  chunck += '<button onclick="loadFirstQuestion()" class="scorebtn">Reset</button></p>';
   questionArea.innerHTML = chunck;
 } // close question function
 
@@ -430,7 +430,7 @@ function loadSecondQuestions(set, setStr) {
 function setQ(set, q, i) {
   var thingie = set[q].id;
   responses[set[q].id] = set[q].responses[i];
-    // test code
+    /* test code
     var testThing = 'main: ' + responses.main + ', ';
     testThing += 'subject: ' + responses.subject + ', ';
     testThing += 'citation: ' + responses.cite + ', ';
@@ -438,7 +438,7 @@ function setQ(set, q, i) {
     testThing +=  questionCat[i] + ': ' + responses[questionCat[i]] + ', ';
     }
     document.getElementById("test").innerHTML =  testThing ;
-    // end test code
+    //end test code */
 }
 
 function scoreIt() {
