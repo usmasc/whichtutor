@@ -221,7 +221,7 @@ var mathQuestions = [
 var statsQuestions = [
 	{
 		"id":"subject",
-		"cat": "math",
+		"cat": "stats",
 		"question" : "What subject do you need help with?",
 		"responses" : ["prob and stats", "business stats","SPSS"]
 	}
