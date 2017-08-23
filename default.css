@@ -9,6 +9,11 @@ h3 {
       font-family: Monospace, "Courier New";
     }
 
+.small {
+      font-size: 8px;
+      font-family: Monospace, "Courier New";
+    }
+
 table {
       font-size: 20px;
       font-family: Monospace, "Courier New";
