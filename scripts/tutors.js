@@ -212,6 +212,17 @@ var mathQuestions = [
 		"responses" : ["Algebra","Calculus","Trigonometry","Business Calculus","business stats","other"]
 	}
 ];
+
+
+var statsQuestions = [
+	{
+		"id":"subject",
+		"cat": "math",
+		"question" : "What subject do you need help with?",
+		"responses" : ["prob and stats", "business stats","SPSS"]
+	}
+];
+
 // questions for science domain
 var scienceQuestions = [
   {
@@ -327,8 +338,8 @@ function setMainArea(i) {
 		loadSecondQuestions(writingQuestions, 'writingQuestions');
 	} else if (responses.main == 'math') {
 		loadSecondQuestions(mathQuestions, 'mathQuestions');
-	} else if (responses.main == 'science') {
-		loadScecondQuestions(scienceQuestions, 'scienceQuestions');
+	} else if (responses.main == 'stats') {
+		loadScecondQuestions(statsQuestions, 'statsQuestions');
 	} else if (responses.main == 'speaking') {
 		loadSecondQuestions(speakingQuestions, 'speakingQuestions');
 	} else {
