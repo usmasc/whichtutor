@@ -123,14 +123,14 @@ var tutors = [
   {
     name: "Samantha",
     main: ["Chemistry"],
-    subjects: ["Chemistry", "CHEM 100", "CHEM 104"],
+    subjects: ["Chemistry", "CHEM 100", "CHEM 104","General Chemistry"],
     prefsub: ["Chemistry"],
     cite: [],
-    morning: [],
-    turtle: [],
-    artist: [],
-    pony: [],
-    titan: [],
+    morning: ["coffee"],
+    turtle: ["Leonardo"],
+    artist: ["Michelangelo"],
+    pony: ["Rarity"],
+    titan: ["Raven"],
     score: 0
   },
   {
@@ -162,7 +162,7 @@ var tutors = [
     morning: ["bacon"],
     turtle: ["Donatello"],
     artist: ["Leonardo"],
-    pony: ["Fluttershy"],
+    pony: ["Rainbow Dash"],
     titan: ["Raven"],
     score: 0
   },
@@ -247,6 +247,7 @@ var Questions = [
       "Apple Jack",
       "Fluttershy",
       "Pinkie Pie",
+      "Rainbow Dash",
       "Rarity",
       "Twilight Sparkle"
     ]
