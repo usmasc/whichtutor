@@ -342,7 +342,7 @@ function setMainArea(i) {
 	if (responses.main == 'writing') {
 		loadSecondQuestions(writingQuestions, 'writingQuestions');
 	} else if (responses.main == 'math') {
-		loadSecondQuestions(mathQuestions, 'mathQuestions');d
+		loadSecondQuestions(mathQuestions, 'mathQuestions');
 	} else if (responses.main == 'stats') {
 		loadSecondQuestions(statsQuestions, 'statsQuestions');
 	} else if (responses.main == 'speaking') {
