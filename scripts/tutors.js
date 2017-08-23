@@ -3,25 +3,7 @@ var subPoints = 10; // points for subject
 var OQpoints = 1; // other question points
 
 var tutors = [ 
-	{
-		"name": "Scott",
-		"main": ["math","stats"],
-		"subjects": ["math","stats","Calculus","Algebra","Business Calculus","business stats"],
-		"prefsub":["Business Calculus","business stats"],
-		"citations": ["APA"],
-		"morning": ["bacon"],
-		"score": 0
-  },
-	{
-		"name": "Casey",
-		"main": ["Chemistry"],
-		"subjects": ["Chemistry","CHEM 100","CHEM 104"],
-		"prefsub":[],
-		"cite": [],
-		"morning": ["morning run"],
-		"score": 0
-  },
-  {
+	  {
 		"name": "Adam",
 		"main": ["Geography",'speaking','writing'],
 		"subjects": ["Geography"],
@@ -39,7 +21,16 @@ var tutors = [
 		"morning": [],
 		"score": 0
   },	
-  {
+	{
+		"name": "Casey",
+		"main": ["Chemistry"],
+		"subjects": ["Chemistry","CHEM 100","CHEM 104"],
+		"prefsub":[],
+		"cite": [],
+		"morning": ["morning run"],
+		"score": 0
+  },
+	 {
 		"name": "Dane",
 		"main": ["math","writing"],
 		"subjects": ["math","Calculus","Algebra","Business Calculus"],
@@ -48,7 +39,16 @@ var tutors = [
 		"morning": ["bacon"],
 		"score": 0
   },
-  {
+	{
+		"name": "Elizabeth",
+		"main": ["math"],
+		"subjects": ["math","Calculus","Algebra","Business Calculus"],
+		"prefsub":[],
+		"cite": [],
+		"morning": [],
+		"score": 0
+  },
+	  {
 		"name": "Grace",
 		"main": ['Chemistry'],
 		"subjects": ['Chemistry',"CHEM 100","CHEM 104"],
@@ -66,13 +66,49 @@ var tutors = [
 		"morning": [],
 		"score": 0
   },
-  {
+	{
+		"name": "Jonathan",
+		"main": ["writing","Spanish"],
+		"subjects": ["speaking","writing","Spanish"],
+		"prefsub":[],
+		"cite": [],
+		"morning": [],
+		"score": 0
+  },
+	{
+		"name": "Leah",
+		"main": ["speaking","writing"],
+		"subjects": ["English","Education"],
+		"prefsub":[],
+		"cite": ['MLA'],
+		"morning": [],
+		"score": 0
+  }
+	{
+		"name": "Samantha",
+		"main": ['Chemistry'],
+		"subjects": ['Chemistry',"CHEM 100","CHEM 104"],
+		"prefsub":['Chemistry'],
+		"cite": [],
+		"morning": [],
+		"score": 0
+  },
+	{
 		"name": "Saurabh",
 		"main": ["stats",'SPSS','Research methods'],
 		"subjects": ["stats",'SPSS','Research methods'],
 		"prefsub":["stats",'SPSS','Research methods'],
 		"cite": [],
 		"morning": [],
+		"score": 0
+  },
+	{
+		"name": "Scott",
+		"main": ["math","stats"],
+		"subjects": ["math","stats","Calculus","Algebra","Business Calculus","business stats"],
+		"prefsub":["Business Calculus","business stats"],
+		"citations": ["APA"],
+		"morning": ["bacon"],
 		"score": 0
   },
  {
@@ -84,34 +120,7 @@ var tutors = [
 		"morning": [],
 		"score": 0
   },
-  {
-		"name": "Zachary Stewart",
-		"main": ["speaking","writing"],
-		"subjects": ["speaking","writing","Political Science","History"],
-		"prefsub":["Political Science"],
-		"cite": [],
-		"morning": [],
-		"score": 0
-  },
-  {
-		"name": "Elizabeth",
-		"main": ["math"],
-		"subjects": ["math","Calculus","Algebra","Business Calculus"],
-		"prefsub":[],
-		"cite": [],
-		"morning": [],
-		"score": 0
-  },
-  {
-		"name": "Samantha",
-		"main": ['Chemistry'],
-		"subjects": ['Chemistry',"CHEM 100","CHEM 104"],
-		"prefsub":['Chemistry'],
-		"cite": [],
-		"morning": [],
-		"score": 0
-  },
-  {
+	{
 		"name": "Veronica",
 		"main": ["math"],
 		"subjects": ["math","Calculus","Algebra","Business Calculus"],
@@ -130,20 +139,11 @@ var tutors = [
 		"score": 0
   },
   {
-		"name": "Jonathan",
-		"main": ["writing","Spanish"],
-		"subjects": ["speaking","writing","Spanish"],
-		"prefsub":[],
-		"cite": [],
-		"morning": [],
-		"score": 0
-  },
-    {
-		"name": "Leah",
+		"name": "Zachary Stewart",
 		"main": ["speaking","writing"],
-		"subjects": ["English","Education"],
-		"prefsub":[],
-		"cite": ['MLA'],
+		"subjects": ["speaking","writing","Political Science","History"],
+		"prefsub":["Political Science"],
+		"cite": [],
 		"morning": [],
 		"score": 0
   }
@@ -247,6 +247,7 @@ function loadFirstQuestion() {
 	} // close loop
 	chunck += '</p>';
 	questionArea.innerHTML = chunck;
+	resultsArea.innerHTML = '';
 } // close 1st question function
 
 function loadQuestions(chunck) {
