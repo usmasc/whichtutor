@@ -233,12 +233,12 @@ var Questions = [
   {
     id: "turtle",
     question: "Pick a Ninja Turtle:",
-    responses: ["Donatello", "Leonardo", "Michelangelo", "Raphel"]
+    responses: ["Donatello", "Leonardo", "Michelangelo", "Raphael"]
   },
   {
     id: "artist",
     question: "Pick a Renaissance artist:",
-    responses: ["Donatello", "Leonardo", "Michelangelo", "Raphel"]
+    responses: ["Donatello", "Leonardo", "Michelangelo", "Raphael"]
   },
   {
     id: "pony",
