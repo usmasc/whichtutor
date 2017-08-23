@@ -3,7 +3,7 @@ var subPoints = 10; // points for subject
 var OQpoints = 1; // other question points
 
 var tutors = [ 
-	  {
+  {
 		"name": "Adam",
 		"main": ["Geography",'speaking','writing'],
 		"subjects": ["Geography"],
@@ -127,7 +127,7 @@ var tutors = [
 		"prefsub":['Chemistry'],
 		"cite": [],
 		"morning": [],
-         "turtle": [],
+     "turtle": [],
     "artist": [],
     "pony": [],
     "titan":[],
@@ -156,7 +156,7 @@ var tutors = [
     "turtle": ["Donatello"],
     "artist": ["Leonardo"],
     "pony": ["Fluttershy"],
-    "titan": ["Raven"]
+    "titan": ["Raven"],
 		"score": 0
   },
  {
