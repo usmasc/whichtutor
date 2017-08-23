@@ -12,7 +12,7 @@ var tutors = [
     morning: [],
     turtle: [],
     artist: [],
-    pony: [],
+    pony: ['Apple Jack'],
     titan: [],
     score: 0
   },
@@ -36,9 +36,9 @@ var tutors = [
     prefsub: [],
     cite: [],
     morning: ["morning run"],
-    turtle: [],
+    turtle: ['Michelangelo'],
     artist: [],
-    pony: [],
+    pony: ['Pinkie Pie'],
     titan: [],
     score: 0
   },
