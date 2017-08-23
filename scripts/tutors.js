@@ -242,8 +242,8 @@ function loadQuestions(chunck) {
 		} // close i loop
 		chunck += '</p>';
 	} // close q loop
-  chunck += '<p><button onclick="scoreIt()">Score It!</button></p>';
-	chunck += '<p><button onclick="loadFirstQuestion()">Reset</button></p>';
+  chunck += '<p><button onclick="scoreIt()">Score It!</button> ';
+	chunck += '<button onclick="loadFirstQuestion()">Reset</button></p>';
 	questionArea.innerHTML = chunck;
 } // close question function
 
@@ -279,6 +279,7 @@ function scoreIt() {
 	var tutorIndex = 0;
   
 	for (var t = 0; t < tutors.length; t++) {
+		tutors[t].score = 0;
 		if (tutors[t].main.indexOf(responses.main) > -1) {
        tutors[t].score += 1;
 			if (tutors[t]['subjects'].indexOf(responses['subject']) > -1) {
