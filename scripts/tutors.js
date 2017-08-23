@@ -313,7 +313,7 @@ function scoreIt() {
 		}
 	}
   document.getElementById('test').innerHTML = tutors[tutorIndex].name + ' ' + highScore;
-	chunck = 'You should make an appointment with ' + tutors[tutorIndex].name;
+	chunck = '<h1>You should make an appointment with ' + tutors[tutorIndex].name + '</h1>';
 	resultsArea.innerHTML = chunck;
  
 
