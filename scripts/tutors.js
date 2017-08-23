@@ -176,7 +176,7 @@ var firstQuestion =
 	{
 		"id":"main",
   	"question" : "What do you need help with?",
-  	"responses" : ["writing", "math", "speaking", "Spanish", "Chemistry", "Biology","Geography","Psychology","Research methods"]
+  	"responses" : ["writing", "math", "speaking", "Spanish", "Chemistry", "Biology","Computer Science", "Geography","Psychology","Research methods"]
 	};
 
 // questions for writing domain
