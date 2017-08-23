@@ -10,6 +10,10 @@ var tutors = [
 		"prefsub":["Geography"],
 		"cite": [],
 		"morning": [],
+    "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
   {
@@ -19,6 +23,10 @@ var tutors = [
 		"prefsub":['Chemistry'],
 		"cite": [],
 		"morning": [],
+    "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },	
 	{
@@ -28,6 +36,10 @@ var tutors = [
 		"prefsub":[],
 		"cite": [],
 		"morning": ["morning run"],
+     "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
 	 {
@@ -37,6 +49,10 @@ var tutors = [
 		"prefsub":[],
 		"cite": [],
 		"morning": ["bacon"],
+    "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
 	{
@@ -46,6 +62,10 @@ var tutors = [
 		"prefsub":[],
 		"cite": [],
 		"morning": [],
+    "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
 	  {
@@ -55,6 +75,10 @@ var tutors = [
 		"prefsub":['Chemistry'],
 		"cite": [],
 		"morning": [],
+    "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },	
   {
@@ -64,6 +88,10 @@ var tutors = [
 		"prefsub":['Bilogy'],
 		"cite": [],
 		"morning": [],
+    "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
 	{
@@ -73,6 +101,10 @@ var tutors = [
 		"prefsub":[],
 		"cite": [],
 		"morning": [],
+     "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
 	{
@@ -82,6 +114,10 @@ var tutors = [
 		"prefsub":[],
 		"cite": ['MLA'],
 		"morning": [],
+    "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
 	{
@@ -91,6 +127,10 @@ var tutors = [
 		"prefsub":['Chemistry'],
 		"cite": [],
 		"morning": [],
+         "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
 	{
@@ -100,6 +140,10 @@ var tutors = [
 		"prefsub":["stats",'SPSS','Research methods'],
 		"cite": [],
 		"morning": [],
+     "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
 	{
@@ -109,6 +153,10 @@ var tutors = [
 		"prefsub":["Business Calculus","business stats"],
 		"citations": ["APA"],
 		"morning": ["bacon"],
+    "turtle": ["Donatello"],
+    "artist": ["Leonardo"],
+    "pony": ["Fluttershy"],
+    "titan": ["Raven"]
 		"score": 0
   },
  {
@@ -118,6 +166,10 @@ var tutors = [
 		"prefsub":[],
 		"cite": [],
 		"morning": [],
+     "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
 	{
@@ -127,6 +179,10 @@ var tutors = [
 		"prefsub":[],
 		"cite": [],
 		"morning": [],
+    "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
   {
@@ -136,6 +192,10 @@ var tutors = [
 		"prefsub":["Psychology"],
 		"cite": ['APA'],
 		"morning": [],
+     "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   },
   {
@@ -145,19 +205,43 @@ var tutors = [
 		"prefsub":["Political Science"],
 		"cite": [],
 		"morning": [],
+    "turtle": [],
+    "artist": [],
+    "pony": [],
+    "titan":[],
 		"score": 0
   }
 ];
 
 // array of additional question catergories
-var questionCats = ['morning'];
+var questionCats = ['morning',"turtle","artist","pony", "titan"];
 
 // additional questions
 var Questions = [ 
 	{
-		"id":"morning",
+	"id":"morning",
   	"question" : "Your favorite part of your morning routine",
   	"responses" : ["coffee","morning run","bacon"]
+	},
+		{
+	  "id":"turtle",
+  	"question" : "Pick a Ninja Turtle:",
+  	"responses" : ["Donatello","Leonardo","Michealangelo","Raphel"]
+	},
+		{
+	  "id":"artist",
+  	"question" : "Pick a Renaissance artist:",
+  	"responses" : ["Donatello","Leonardo","Michealangelo","Raphel"]
+	},
+ {
+	  "id":"pony",
+  	"question" : "Pick a pony:",
+  	"responses" : ["Apple Jack","Fluttershy","Pinkie Pie","Rarity","Twilight Sparkle"]
+	},
+   {
+	  "id":"Titan",
+  	"question" : "Pick a Teen Titan:",
+  	"responses" : ["Beast Boy","Cyborg","Raven","Robin","Starfire"]
 	}
 ];
 
