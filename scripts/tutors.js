@@ -443,15 +443,15 @@ function scoreIt() {
     tutors[t].score = 0;
     if (tutors[t].main.indexOf(responses.main) > -1) {
       tutors[t].score += 1;
-      if (tutors[t]["subjects"].indexOf(responses["subject"]) > -1) {
+      if (tutors[t].subjects.indexOf(responses.subject) > -1) {
         tutors[t].score += subPoints;
       }
 
-      if (tutors[t]["prefsub"].indexOf(responses["subject"]) > -1) {
+      if (tutors[t].prefsub.indexOf(responses.subject) > -1) {
         tutors[t].score += prefPoints;
       }
       if (responses.main == "writing") {
-        if (tutors[t]["cite"].indexOf(responses["cite"]) > -1) {
+        if (tutors[t].cite.indexOf(responses.cite) > -1) {
           tutors[t].score += 10;
         }
       }
