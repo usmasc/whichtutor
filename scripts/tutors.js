@@ -208,15 +208,15 @@ var tutors = [
   {
     name: "Zachary Stewart",
     main: ["speaking", "writing"],
-    subjects': ["speaking", "writing", "Political Science", "History"],
-    'prefsub': ["Political Science"],
-    'cite': [],
-    'morning': [],
-    'turtle': [],
-    'artist': [],
-    'pony': [],
-    'titan': [],
-    'score': 0
+    subjects: ["speaking", "writing", "Political Science", "History"],
+    prefsub: ["Political Science"],
+    cite: [],
+    morning: [],
+    turtle: [],
+    artist: [],
+    pony: [],
+    titan: [],
+    score: 0
   }
 ];
 
@@ -263,14 +263,14 @@ var resultsArea = document.getElementById("results");
 
 // object to store responses
 var responses = {
-  'main': "",
-  'subject': "",
-  'cite': "",
-  'morning': "",
-  'turtle': '',
-  'artist': '',
-  'pony': '',
-  'titan': ''
+  main: "",
+  subject: "",
+  cite: "",
+  morning: "",
+  turtle: "",
+  artist: "",
+  pony: "",
+  titan: ""
 };
 
 // first question to determine main domain
@@ -473,8 +473,11 @@ function scoreIt() {
       tutorIndex = t;
     }
   }
- // document.getElementById("test").innerHTML =   tutors[tutorIndex].name + " " + highScore;
-  chunck = "<h1>You should make an appointment with " + tutors[tutorIndex].name +  "</h1>";
+  // document.getElementById("test").innerHTML =   tutors[tutorIndex].name + " " + highScore;
+  chunck =
+    "<h1>You should make an appointment with " +
+    tutors[tutorIndex].name +
+    "</h1>";
   resultsArea.innerHTML = chunck;
 } // close score it function
 
