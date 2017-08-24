@@ -97,7 +97,7 @@ var tutors = [
     turtle: ['Michelangelo'],
     artist: ['Leonardo'],
     pony: ['Twilight Sparkle'],
-    titan: ["Robin'],
+    titan: ["Robin"],
     score: 0,
     bio: "Heather can't wait to help you learn."
   },
