@@ -106,9 +106,9 @@ var tutors = [
   },
   {
     name: "Heather",
-    main: ["Bilogy"],
-    subjects: ["Bilogy"],
-    prefsub: ["Bilogy"],
+    main: ["Biology"],
+    subjects: ["Biology"],
+    prefsub: ["Biology"],
     cite: [],
     morning: ["coffee"],
     turtle: ["Michelangelo"],
