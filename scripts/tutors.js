@@ -14,7 +14,8 @@ var tutors = [
     artist: [],
     pony: ['Apple Jack'],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Adam is a Geography major. He tutors Geography, speaking, and writing. He also likes to code. He's a Veteran. He's involved with GTU and Southern Connection. Adam prefers that you hit reply and not reply all when you reply to emails."  
   },
   {
     name: "Aleysh",
@@ -27,7 +28,8 @@ var tutors = [
     artist: [],
     pony: [],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Aleysh is a Chemistry tutor. She is also involved in Sigma Mu: Science and Math Club"
   },
   {
     name: "Casey",
@@ -40,7 +42,8 @@ var tutors = [
     artist: [],
     pony: ['Pinkie Pie'],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Casey is Casey. Once you get to know him, you'll understand."
   },
   {
     name: "Dane",
@@ -53,7 +56,8 @@ var tutors = [
     artist: [],
     pony: [],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Dane is a Chemical Engineer who is going back to school to learn Computer Science. He wants to learn all the things!"
   },
   {
     name: "Elizabeth",
@@ -66,7 +70,8 @@ var tutors = [
     artist: [],
     pony: [],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Elizabeth tutors math. That's what she tutors. Yeah."
   },
   {
     name: "Grace",
@@ -79,7 +84,8 @@ var tutors = [
     artist: [],
     pony: [],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Grace tutors chemistry."
   },
   {
     name: "Heather",
@@ -92,7 +98,8 @@ var tutors = [
     artist: [],
     pony: [],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Heather tutors Biology."
   },
   {
     name: "Jonathan",
@@ -105,7 +112,8 @@ var tutors = [
     artist: [],
     pony: [],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Jonathan tutors in speaking, writing, and Spanish"
   },
   {
     name: "Leah",
@@ -118,7 +126,8 @@ var tutors = [
     artist: [],
     pony: [],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Leah is a studying to be a high school English teacher."
   },
   {
     name: "Samantha",
@@ -131,7 +140,8 @@ var tutors = [
     artist: ["Michelangelo"],
     pony: ["Rarity"],
     titan: ["Raven"],
-    score: 0
+    score: 0,
+    bio: "Samantha is a Chemistry tutor."
   },
   {
     name: "Saurabh",
@@ -144,7 +154,8 @@ var tutors = [
     artist: [],
     pony: [],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Saurabh is just awesome."
   },
   {
     name: "Scott",
@@ -164,7 +175,8 @@ var tutors = [
     artist: ["Leonardo"],
     pony: ["Rainbow Dash"],
     titan: ["Raven"],
-    score: 0
+    score: 0,
+    bio: "Scott is an Air Force Veteran. He wants to teach math and a little bit of programming too. He made this quiz."
   },
   {
     name: "Teneala",
@@ -177,7 +189,8 @@ var tutors = [
     artist: [],
     pony: [],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Teneala is majoring in Computer Science with a double minor in Spanish and Math as part of her plot for world domination. We're not kidding."
   },
   {
     name: "Veronica",
@@ -190,20 +203,22 @@ var tutors = [
     artist: [],
     pony: [],
     titan: [],
-    score: 0
+    score: 0,
+    bio: "Veronica is a Veteran. She is now majoring in Geography. She was an accounting major, but Geography is awesome. So there!"
   },
   {
     name: "Zachary Ransom",
     main: ["speaking", "writing", "Psychology"],
-    subjects: ["speaking", "writing", "Psychology"],
+    subjects: ["speaking", "writing", "Psychology","Academic Research"],
     prefsub: ["Psychology"],
     cite: ["APA"],
-    morning: [],
-    turtle: [],
-    artist: [],
-    pony: [],
-    titan: [],
-    score: 0
+    morning: ['coffee','bacon'],
+    turtle: ['Raphael'],
+    artist: ['Michelangelo'],
+    pony: ['Twilight Sparkle'],
+    titan: ['Cyborg'],
+    score: 0,
+    bio: "<p>Zachary Ransom is currently a Senior majoring in Psychology.  His focus within the field of psychology is currently focused on Applied Behavioral Analysis with the intent of pursuing a Ph.D. in School Psychology.  In accordance with these goals, he is currently a clinical intern and conducting the research for his senior thesis at USM's Autism Project.</p><p>A desire to serve my community led him to become a paramedic and now serves as my inspiration to push forward with his current academic pursuits.   This also serves as his inspiration to be a tutor.  He takes pride in being able to offer my assistance in helping his fellow students fulfill their academic potential and achieve success.  His strategy for tutoring centers around this concept.  His main goal is to help those that he tutors realize what strategies work well for them and to then help them hone those talents.</p>"
   },
   {
     name: "Zachary Stewart",
@@ -216,7 +231,8 @@ var tutors = [
     artist: [],
     pony: [],
     titan: [],
-    score: 0
+    score: 0,
+    bio: ""
   }
 ];
 
@@ -483,10 +499,8 @@ function scoreIt() {
     }
   }
   // document.getElementById("test").innerHTML =   tutors[tutorIndex].name + " " + highScore;
-  chunck =
-    "<h1>You should make an appointment with " +
-    tutors[tutorIndex].name +
-    "</h1>";
+  chunck = "<h1>You should make an appointment with " + tutors[tutorIndex].name + "</h1>";
+  chunck += "<p>" + tutors[tutorIndex].bio + "</p>";
   resultsArea.innerHTML = chunck;
 } // close score it function
 
