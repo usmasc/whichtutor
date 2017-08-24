@@ -93,13 +93,13 @@ var tutors = [
     subjects: ["Bilogy"],
     prefsub: ["Bilogy"],
     cite: [],
-    morning: [],
-    turtle: [],
-    artist: [],
-    pony: [],
-    titan: [],
+    morning: ['coffee'],
+    turtle: ['Michelangelo'],
+    artist: ['Leonardo'],
+    pony: ['Twilight Sparkle'],
+    titan: ["Robin'],
     score: 0,
-    bio: "Heather tutors Biology."
+    bio: "Heather can't wait to help you learn."
   },
   {
     name: "Jonathan",
