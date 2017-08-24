@@ -48,10 +48,10 @@ var tutors = [
   {
     name: "Dane",
     main: ["math", "writing"],
-    subjects: ["math", "Calculus", "Algebra", "Business Calculus"],
+    subjects: ["math", "Calculus","Algebra", "Intermediate Algebra", "College Algebra", "Business Calculus"],
     prefsub: [],
     cite: [],
-    morning: ["bacon"],
+    morning: [],
     turtle: [],
     artist: [],
     pony: [],
@@ -62,16 +62,16 @@ var tutors = [
   {
     name: "Elizabeth",
     main: ["math"],
-    subjects: ["math", "Calculus", "Algebra", "Business Calculus"],
-    prefsub: [],
+    subjects: ["math", "Algebra", "Intermediate Algebra", "College Algebra", "Business Calculus"],
+    prefsub: ["Intermediate Algebra", "College Algebra", "Business Calculus"],
     cite: [],
-    morning: [],
-    turtle: [],
-    artist: [],
-    pony: [],
-    titan: [],
+    morning: ["hot tea"],
+    turtle: ["Michelangelo"],
+    artist: ["Raphael"],
+    pony: ["Fluttershy"],
+    titan: ["Starfire"],
     score: 0,
-    bio: "Elizabeth tutors math. That's what she tutors. Yeah."
+    bio: "Elizabeth is a marketing major who enjoys tutoring Intermediate Algebra, College Algebra, and Brief Applied Calculus (Business Calculus)."
   },
   {
     name: "Grace",
@@ -165,6 +165,7 @@ var tutors = [
       "stats",
       "Calculus",
       "Algebra",
+      "Intermediate Algebra", "College Algebra",
       "Business Calculus",
       "business stats"
     ],
@@ -218,7 +219,7 @@ var tutors = [
     pony: ['Twilight Sparkle'],
     titan: ['Cyborg'],
     score: 0,
-    bio: "<p>Zachary Ransom is currently a Senior majoring in Psychology.  His focus within the field of psychology is currently focused on Applied Behavioral Analysis with the intent of pursuing a Ph.D. in School Psychology.  In accordance with these goals, he is currently a clinical intern and conducting the research for his senior thesis at USM's Autism Project.</p><p>A desire to serve my community led him to become a paramedic and now serves as my inspiration to push forward with his current academic pursuits.   This also serves as his inspiration to be a tutor.  He takes pride in being able to offer my assistance in helping his fellow students fulfill their academic potential and achieve success.  His strategy for tutoring centers around this concept.  His main goal is to help those that he tutors realize what strategies work well for them and to then help them hone those talents.</p>"
+    bio: "<p>Zachary Ransom is currently a Senior majoring in Psychology.  His focus within the field of psychology is currently focused on Applied Behavioral Analysis with the intent of pursuing a Ph.D. in School Psychology.  In accordance with these goals, he is currently a clinical intern and conducting the research for his senior thesis at USM's Autism Project.</p><p>A desire to serve his community led him to become a paramedic and now serves as his inspiration to push forward with his current academic pursuits.   This also serves as his inspiration to be a tutor.  He takes pride in being able to offer my assistance in helping his fellow students fulfill their academic potential and achieve success.  His strategy for tutoring centers around this concept.  His main goal is to help those that he tutors realize what strategies work well for them and to then help them hone those talents.</p>"
   },
   {
     name: "Zachary Stewart",
@@ -244,7 +245,7 @@ var Questions = [
   {
     id: "morning",
     question: "Your favorite part of your morning routine",
-    responses: ["coffee", "morning run", "bacon"]
+    responses: ["coffee", "morning run", "bacon","hot tea"]
   },
   {
     id: "turtle",
@@ -355,11 +356,11 @@ var mathQuestions = [
     cat: "math",
     question: "What subject do you need help with?",
     responses: [
-      "Algebra",
       "Calculus",
       "Trigonometry",
       "Business Calculus",
       "business stats",
+      "Intermediate Algebra", "College Algebra",
       "other"
     ]
   }
