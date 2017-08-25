@@ -451,9 +451,8 @@ function loadQuestions(chunck) {
     chunck += '</div>';
   } // close q loop
   
-  chunck += '<div class="box"><p><button onclick="scoreIt()" class="scorebtn">Score It!</button> ';
-  chunck +=
-    '<button onclick="loadFirstQuestion()" class="scorebtn">Reset</button></p></div>';
+  chunck += '<div class="box"><button onclick="scoreIt()" class="scorebtn">Score It!</button> ';
+  chunck += '<button onclick="loadFirstQuestion()" class="scorebtn">Reset</button></div>';
   questionArea.innerHTML = chunck;
 } // close question function
 
