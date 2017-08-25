@@ -54,6 +54,8 @@ button:after {
 
 .box {
       background-color: #eeeeee;
+      padding: 5px;
+      margin: 5px;
 }
 
 </style>
