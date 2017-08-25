@@ -530,7 +530,7 @@ function scoreIt() {
   }
   // document.getElementById("test").innerHTML =   tutors[tutorIndex].name + " " + highScore;
   chunck = '<div class="box"><h2>You should make an appointment with ' + tutors[tutorIndex].name +  "</h2>";
-  chunck += "<p>" + tutors[tutorIndex].bio + ' Visit <a href="https://usm.mywconline.com>usm.mywconline.com</a>';
+  chunck += "<p>" + tutors[tutorIndex].bio + ' Visit <a href="https://usm.mywconline.com">usm.mywconline.com</a>';
   chunck += 'to make an appointment with ' + tutors[tutorIndex].name + ".</p></div>";
   resultsArea.innerHTML = chunck;
 } // close score it function
