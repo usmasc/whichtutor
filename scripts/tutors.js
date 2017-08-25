@@ -107,8 +107,8 @@ var tutors = [
   {
     name: "Heather",
     main: ["Biology"],
-    subjects: ["Biology"],
-    prefsub: ["Biology"],
+    subjects: ["Biology","General Biology"],
+    prefsub: ["Biology","General Biology"],
     cite: [],
     morning: ["coffee"],
     turtle: ["Michelangelo"],
@@ -117,6 +117,20 @@ var tutors = [
     titan: ["Robin"],
     score: 0,
     bio: "Heather can't wait to help you learn."
+  },
+  {
+    name: "Autumn",
+    main: ["Biology","Writing"],
+    subjects: ["Biology","General Biology"],
+    prefsub: ["Biology"],
+    cite: [],
+    morning: [],
+    turtle: [],
+    artist: [],
+    pony: [],
+    titan: [],
+    score: 0,
+    bio: ""
   },
   {
     name: "Jonathan",
