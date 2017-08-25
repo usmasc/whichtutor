@@ -96,13 +96,13 @@ var tutors = [
     subjects: ["Chemistry", "CHEM 100", "CHEM 104"],
     prefsub: ["Chemistry"],
     cite: [],
-    morning: [],
-    turtle: [],
-    artist: [],
-    pony: [],
-    titan: [],
+    morning: ["morning run"],
+    turtle: ["Leonardo"],
+    artist: ["Donatello"],
+    pony: ["Twilight SParkle"],
+    titan: ["Cyborg"],
     score: 0,
-    bio: "Grace tutors chemistry."
+    bio: "Grace tutors chemistry. It's true. She does."
   },
   {
     name: "Heather",
@@ -136,15 +136,15 @@ var tutors = [
     name: "Jonathan",
     main: ["writing", "Spanish"],
     subjects: ["speaking", "writing", "Spanish"],
-    prefsub: [],
-    cite: [],
-    morning: [],
-    turtle: [],
-    artist: [],
-    pony: [],
-    titan: [],
+    prefsub: ["writing","Spanish"],
+    cite: ["MLA"],
+    morning: ["coffee"],
+    turtle: ["Donatello"],
+    artist: ["Raphael"],
+    pony: ["Apple Jack"],
+    titan: ["Raven"],
     score: 0,
-    bio: "Jonathan tutors in speaking, writing, and Spanish"
+    bio: "Jonathan tutors in Writing and Spanish. He is a Junior studying English With Licensure to teach. He enjoys reading books and talking about them. "
   },
   {
     name: "Leah",
@@ -531,10 +531,11 @@ function scoreIt() {
   }
   // document.getElementById("test").innerHTML =   tutors[tutorIndex].name + " " + highScore;
   chunck =
-    "<h1>You should make an appointment with " +
+    "<div class="box"><h1>You should make an appointment with " +
     tutors[tutorIndex].name +
     "</h1>";
-  chunck += "<p>" + tutors[tutorIndex].bio + "</p>";
+  chunck += "<p>" + tutors[tutorIndex].bio + ' visit <a href="https://usm.mywconline.com>usm.mywconline.com</a> to make an appointment with ';
+  chunck += tutors[tutorIndex].name + ".</p></div>";
   resultsArea.innerHTML = chunck;
 } // close score it function
 
