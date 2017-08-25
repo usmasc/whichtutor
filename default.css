@@ -1,6 +1,6 @@
 <style> 
 p {
-      font-size: 20px;
+      font-size: 18px;
       font-family: Monospace, "Courier New";
 
 }
@@ -10,6 +10,10 @@ h1 {
       padding: 5px;
       margin: 25px;
     }
+
+h2 {
+      font-size: 25px;
+      font-family: Monospace, "Courier New";
 
 h3 {
       font-size: 20px;
@@ -62,6 +66,7 @@ button:after {
 }
 
 .box {
+      font-family: Monospace, "Courier New";
       background-color: #eeeeee;
       padding: 5px;
       margin: 25px;
