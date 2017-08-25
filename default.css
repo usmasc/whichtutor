@@ -1,74 +1,70 @@
 <style> 
 p {
-      font-size: 18px;
-      font-family: Monospace, "Courier New";
-
+  font-size: 18px;
+  font-family: Monospace, "Courier New";
 }
 h1 {
-      font-size: 30px;
-      font-family: Monospace, "Courier New";
-      padding: 5px;
-      margin: 25px;
-    }
+  font-size: 30px;
+  font-family: Monospace, "Courier New";
+  padding: 5px;
+  margin: 25px;
+}
 
 h2 {
-      font-size: 25px;
-      font-family: Monospace, "Courier New";
+  font-size: 25px;
+  font-family: Monospace, "Courier New";
 }
 
 h3 {
-      font-size: 20px;
-      font-family: Monospace, "Courier New";
-    }
+  font-size: 20px;
+  font-family: Monospace, "Courier New";
+}
 
 .small {
-      font-size: 8px;
-      font-family: Monospace, "Courier New";
-    }
+  font-size: 8px;
+  font-family: Monospace, "Courier New";
+}
 
 table {
-      font-size: 20px;
-      font-family: Monospace, "Courier New";
-
+  font-size: 20px;
+  font-family: Monospace, "Courier New";
 }
 
-th, td {
-    padding: 15px;
-}
 
 button {
-      margin: 5px;
-      padding: 10px;
-    	border: none;
-      font-size: 13px;
-      font-family: Monospace, "Courier New";
-      background-color:#ffd700;
-      color: #000000;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  font-size: 13px;
+  font-family: Monospace, "Courier New";
+  background-color: #ffd700;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .scorebtn {
-      background-color:#000000;
-      color: #ffd700;
+  background-color: #000000;
+  color: #ffd700;
 }
 
 button:active {
-      background-color: #cca300;
-      color: #00000;
+  background-color: #cca300;
+  color: #00000;
 }
 
 button:after {
-      background-color: #cca300;
-      color: #00000;
+  background-color: #cca300;
+  color: #00000;
 }
 
 .box {
-      font-family: Monospace, "Courier New";
-      background-color: #eeeeee;
-      padding: 5px;
-      margin: 25px;
+  font-family: Monospace, "Courier New";
+  background-color: #eeeeee;
+  padding: 5px;
+  margin: 25px;
 }
+
 
 </style>
