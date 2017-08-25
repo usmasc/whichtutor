@@ -423,7 +423,9 @@ var scienceQuestions = [
 ];
 
 function loadFirstQuestion() {
-  var chunck = "<p>";
+  
+  var chunck = '<div class="box"><p>';
+
   chunck += firstQuestion.question + "</p><p>";
   for (var i = 0; i < firstQuestion.responses.length; i++) {
     chunck +=
@@ -433,26 +435,22 @@ function loadFirstQuestion() {
       firstQuestion.responses[i] +
       "</button>";
   } // close loop
-  chunck += "</p>";
+  chunck += "</p></div>";
   questionArea.innerHTML = chunck;
   resultsArea.innerHTML = "";
 } // close 1st question function
 
 function loadQuestions(chunck) {
   for (var q = 0; q < Questions.length; q++) {
+    chunck += '<div class="box">';
     chunck += "<p>" + Questions[q].question + "</p><p>";
     for (var i = 0; i < Questions[q].responses.length; i++) {
-      chunck +=
-        '<button onclick="setQ(Questions,' +
-        q +
-        "," +
-        i +
-        ')">' +
-        Questions[q].responses[i] +
-        "</button>";
+      chunck += '<button onclick="setQ(Questions,' +  q +  "," +  i + ')">' +  Questions[q].responses[i] + "</button>";
     } // close i loop
     chunck += "</p>";
+    chunck += '</div>';
   } // close q loop
+  
   chunck +=
     '<p><button onclick="scoreIt()" class="scorebtn">Score It!</button> ';
   chunck +=
@@ -463,22 +461,15 @@ function loadQuestions(chunck) {
 function loadSecondQuestions(set, setStr) {
   var chunck = "";
   for (var q = 0; q < set.length; q++) {
+    chunck += '<div class="box">';
     chunck += "<p>" + set[q].question + "</p><p>";
     // document.getElementById('test').innerHTML = chunck;
     for (var i = 0; i < set[q].responses.length; i++) {
-      chunck +=
-        '<button onclick="setQ(' +
-        setStr +
-        "," +
-        q +
-        "," +
-        i +
-        ')">' +
-        set[q].responses[i] +
-        "</button>";
+      chunck += '<button onclick="setQ(' + setStr + "," + q + "," +  i + ')">' + set[q].responses[i] + "</button>";
       // document.getElementById('test').innerHTML = set;
     } // close i for
     chunck += "</p>";
+    chunck += '</div>';
   } // close q for
   loadQuestions(chunck);
 } // close 2nd question function
