@@ -44,7 +44,7 @@ button {
   display: inline-block;
 }
 
-.scorebtn {
+.scorebtn, .selected {
   background-color: #000000;
   color: #ffd700;
 }

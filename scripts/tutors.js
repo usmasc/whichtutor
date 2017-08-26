@@ -356,7 +356,6 @@ var writingQuestions = [
       "History",
       "Science",
       "Geography",
-      "Science",
       "Psychology",
       "other"
     ]
@@ -378,7 +377,6 @@ var speakingQuestions = [
       "History",
       "Science",
       "Geography",
-      "Science",
       "Psychology",
       "other"
     ]
@@ -423,6 +421,9 @@ var scienceQuestions = [
 ];
 
 function loadFirstQuestion() {
+  for (i = 0; i < questionCats.length; i++) {
+    responses[questionCats[i]] = '';
+  }
   
   var chunck = '<div class="box"><p>';
 
@@ -443,9 +444,13 @@ function loadFirstQuestion() {
 function loadQuestions(chunck) {
   for (var q = 0; q < Questions.length; q++) {
     chunck += '<div class="box">';
-    chunck += "<p>" + Questions[q].question + "</p><p>";
+    chunck += '<p>' + Questions[q].question + '</p><p>';
     for (var i = 0; i < Questions[q].responses.length; i++) {
-      chunck += '<button onclick="setQ(Questions,' +  q +  "," +  i + ')">' +  Questions[q].responses[i] + "</button>";
+      chunck += '<button ';
+      if (responses[Questions[q].id] == Questions[q].responses[i]) {
+          chunck += 'class="selected" ';
+      }
+      chunck += 'onclick="setQ(Questions,' +  q +  ',' +  i + ')">' +  Questions[q].responses[i] + '</button>';
     } // close i loop
     chunck += "</p>";
     chunck += '</div>';
@@ -463,32 +468,20 @@ function loadSecondQuestions(set, setStr) {
     chunck += "<p>" + set[q].question + "</p><p>";
     // document.getElementById('test').innerHTML = chunck;
     for (var i = 0; i < set[q].responses.length; i++) {
-      chunck += '<button onclick="setQ(' + setStr + "," + q + "," +  i + ')">' + set[q].responses[i] + "</button>";
+      chunck += '<button ';
+      if (responses[set[q].id] == set[q].responses[i]) {
+          chunck += 'class="selected" ';
+      }
+      chunck += 'onclick="setQ(' + setStr + "," + q + "," +  i + ')">' + set[q].responses[i] + "</button>";
       // document.getElementById('test').innerHTML = set;
-    } // close i for
+    } // close i loop
     chunck += "</p>";
     chunck += '</div>';
   } // close q for
   loadQuestions(chunck);
 } // close 2nd question function
 
-function setQ(set, q, i) {
-  var thingie = set[q].id;
-  responses[set[q].id] = set[q].responses[i];
-  // test code
-  var testThing = 'main: ' + responses.main + ', ';
-  testThing += 'subject: ' + responses.subject + ', ';
-  if (responses.main == 'writing') {
-    testThing += 'citation: ' + responses.cite + ', ';
-  }
-  testThing += 'morning: ' + responses.morning + ', ';
-  testThing += 'turtle: ' + responses.turtle + ', ';
-  testThing += 'artist: ' + responses.artist + ', ';
-  testThing += 'pony: ' + responses.pony + ', ';
-  testThing += 'titan: ' + responses.titan;
-  document.getElementById("test2").innerHTML =  testThing;
-    //end test code 
-}
+
 
 function scoreIt() {
   // document.getElementById('test').innerHTML = tutors[0][questionCats[0]].indexOf(responses[questionCats[0]]);
@@ -537,12 +530,13 @@ function scoreIt() {
   chunck += ' to make an appointment with ' + tutors[tutorIndex].name + ".</p></div>";
   resultsArea.innerHTML = chunck;
 } // close score it function
+  
+ function secondSetGo() {
 
-function setMainArea(i) {
-  responses.main = firstQuestion.responses[i];
-  document.getElementById("test").innerHTML = responses.main;
-  if (responses.main == "writing") {
+   if (responses.main == "writing") {
+
     loadSecondQuestions(writingQuestions, "writingQuestions");
+
   } else if (responses.main == "math") {
     loadSecondQuestions(mathQuestions, "mathQuestions");
   } else if (responses.main == "stats") {
@@ -550,9 +544,37 @@ function setMainArea(i) {
   } else if (responses.main == "speaking") {
     loadSecondQuestions(speakingQuestions, "speakingQuestions");
   } else {
+                      
     //questionArea.innerHTML = '';
     loadQuestions("");
+    document.getElementById("test").innerHTML = responses.main;
   }
+
+ }
+    
+ function setQ(set, q, i) {
+  var thingie = set[q].id;
+  responses[set[q].id] = set[q].responses[i];
+  // test code
+  var testThing = 'main: ' + responses.main + ', ';
+  testThing += 'subject: ' + responses.subject + ', ';
+  if (responses.main == 'writing') {
+    testThing += 'citation: ' + responses.cite + ', ';
+  }
+  testThing += 'morning: ' + responses.morning + ', ';
+  testThing += 'turtle: ' + responses.turtle + ', ';
+  testThing += 'artist: ' + responses.artist + ', ';
+  testThing += 'pony: ' + responses.pony + ', ';
+  testThing += 'titan: ' + responses.titan;
+  document.getElementById("test2").innerHTML =  testThing;
+  secondSetGo();
+    //end test code 
+}
+
+function setMainArea(i) {
+  responses.main = firstQuestion.responses[i];
+
+  secondSetGo();
 }
 
 loadFirstQuestion();
