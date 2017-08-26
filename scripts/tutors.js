@@ -422,7 +422,7 @@ var scienceQuestions = [
 
 function loadFirstQuestion() {
   for (i = 0; i < questionCats.length; i++) {
-    responses[questionCats[i] = '';
+    responses[questionCats[i]] = '';
   }
   
   var chunck = '<div class="box"><p>';
