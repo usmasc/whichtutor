@@ -443,13 +443,13 @@ function loadFirstQuestion() {
 function loadQuestions(chunck) {
   for (var q = 0; q < Questions.length; q++) {
     chunck += '<div class="box">';
-    chunck += "<p>" + Questions[q].question + "</p><p>";
+    chunck += '<p>' + Questions[q].question + '</p><p>';
     for (var i = 0; i < Questions[q].responses.length; i++) {
       chunck += '<button ';
-      if (responses[Questions[q].id] == Questions[q].resonses[i] {
+      if (responses[Questions[q].id] == Questions[q].responses[i]) {
           chunck += 'class="selected" ';
       }
-      chunck += 'onclick="setQ(Questions,' +  q +  "," +  i + ')">' +  Questions[q].responses[i] + "</button>";
+      chunck += 'onclick="setQ(Questions,' +  q +  ',' +  i + ')">' +  Questions[q].responses[i] + '</button>';
     } // close i loop
     chunck += "</p>";
     chunck += '</div>';
@@ -468,12 +468,12 @@ function loadSecondQuestions(set, setStr) {
     // document.getElementById('test').innerHTML = chunck;
     for (var i = 0; i < set[q].responses.length; i++) {
       chunck += '<button ';
-      if (responses[set[q].id] == set[q].resonses[i] {
+      if (responses[set[q].id] == set[q].responses[i]) {
           chunck += 'class="selected" ';
       }
       chunck += 'onclick="setQ(' + setStr + "," + q + "," +  i + ')">' + set[q].responses[i] + "</button>";
       // document.getElementById('test').innerHTML = set;
-    } // close i for
+    } // close i loop
     chunck += "</p>";
     chunck += '</div>';
   } // close q for
@@ -531,8 +531,11 @@ function scoreIt() {
 } // close score it function
   
  function secondSetGo() {
+
    if (responses.main == "writing") {
+
     loadSecondQuestions(writingQuestions, "writingQuestions");
+
   } else if (responses.main == "math") {
     loadSecondQuestions(mathQuestions, "mathQuestions");
   } else if (responses.main == "stats") {
@@ -540,9 +543,12 @@ function scoreIt() {
   } else if (responses.main == "speaking") {
     loadSecondQuestions(speakingQuestions, "speakingQuestions");
   } else {
+                      
     //questionArea.innerHTML = '';
     loadQuestions("");
+    document.getElementById("test").innerHTML = responses.main;
   }
+
  }
     
  function setQ(set, q, i) {
@@ -566,7 +572,7 @@ function scoreIt() {
 
 function setMainArea(i) {
   responses.main = firstQuestion.responses[i];
-  document.getElementById("test").innerHTML = responses.main;
+
   secondSetGo();
 }
 
