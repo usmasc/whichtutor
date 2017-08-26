@@ -482,7 +482,7 @@ function setQ(set, q, i) {
     for (var i = 0; i < questionCat.length; i++) {
     testThing +=  questionCat[i] + ': ' + responses[questionCat[i]] + ', ';
     }
-    document.getElementById("test").innerHTML =  testThing ;
+    document.getElementById("test2").innerHTML =  testThing;
     //end test code 
 }
 
