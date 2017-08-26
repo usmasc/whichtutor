@@ -202,7 +202,7 @@ var tutors = [
       "business stats"
     ],
     prefsub: ["Business Calculus", "business stats"],
-    citations: ["APA"],
+    cite: ["APA"],
     morning: ["bacon"],
     turtle: ["Donatello"],
     artist: ["Leonardo"],
@@ -362,7 +362,7 @@ var writingQuestions = [
     ]
   },
   {
-    id: "citation",
+    id: "cite",
     question: "What citation style are you using?",
     responses: ["APA", "MLA", "Chicago", "Turabian", "other"]
   }
