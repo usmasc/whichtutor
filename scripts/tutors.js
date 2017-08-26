@@ -446,7 +446,7 @@ function loadQuestions(chunck) {
     chunck += "<p>" + Questions[q].question + "</p><p>";
     for (var i = 0; i < Questions[q].responses.length; i++) {
       chunck += '<button ';
-      if (responses.Questions[q].id == Questions[q].resonses[i] {
+      if (responses[Questions[q].id] == Questions[q].resonses[i] {
           chunck += 'class="selected" ';
       }
       chunck += 'onclick="setQ(Questions,' +  q +  "," +  i + ')">' +  Questions[q].responses[i] + "</button>";
@@ -468,7 +468,7 @@ function loadSecondQuestions(set, setStr) {
     // document.getElementById('test').innerHTML = chunck;
     for (var i = 0; i < set[q].responses.length; i++) {
       chunck += '<button ';
-      if (responses.set[q].id == set[q].resonses[i] {
+      if (responses[set[q].id] == set[q].resonses[i] {
           chunck += 'class="selected" ';
       }
       chunck += 'onclick="setQ(' + setStr + "," + q + "," +  i + ')">' + set[q].responses[i] + "</button>";
