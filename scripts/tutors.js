@@ -424,6 +424,8 @@ function loadFirstQuestion() {
   for (i = 0; i < questionCats.length; i++) {
     responses[questionCats[i]] = '';
   }
+  responses.subject = '';
+  responses.cite = '';
   
   var chunck = '<div class="box"><p>';
 
@@ -546,8 +548,10 @@ function scoreIt() {
   } else {
                       
     //questionArea.innerHTML = '';
+    responses.subject = responses.main;
     loadQuestions("");
-    document.getElementById("test").innerHTML = responses.main;
+    
+    //document.getElementById("test").innerHTML = responses.main;
   }
 
  }
