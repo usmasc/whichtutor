@@ -476,13 +476,15 @@ function setQ(set, q, i) {
   var thingie = set[q].id;
   responses[set[q].id] = set[q].responses[i];
   // test code
-    var testThing = 'main: ' + responses.main + ', ';
-    testThing += 'subject: ' + responses.subject + ', ';
-    testThing += 'citation: ' + responses.cite + ', ';
-    for (var i = 0; i < questionCat.length; i++) {
-    testThing +=  questionCat[i] + ': ' + responses[questionCat[i]] + ', ';
-    }
-    document.getElementById("test2").innerHTML =  testThing;
+  var testThing = 'main: ' + responses.main + ', ';
+  testThing += 'subject: ' + responses.subject + ', ';
+  testThing += 'citation: ' + responses.cite + ', ';
+  testThing += 'morning: ' + responses.morning + ', ';
+  testThing += 'turtle: ' + responses.turtle + ', ';
+  testThing += 'artist: ' + responses.artist + ', ';
+  testThing += 'pony: ' + responses.pony + ', ';
+  testThing += 'titan: ' + responses.titan + ', ';
+  document.getElementById("test2").innerHTML =  testThing;
     //end test code 
 }
 
