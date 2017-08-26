@@ -478,12 +478,14 @@ function setQ(set, q, i) {
   // test code
   var testThing = 'main: ' + responses.main + ', ';
   testThing += 'subject: ' + responses.subject + ', ';
-  testThing += 'citation: ' + responses.cite + ', ';
+  if (responses.main == 'writing') {
+    testThing += 'citation: ' + responses.cite + ', ';
+  }
   testThing += 'morning: ' + responses.morning + ', ';
   testThing += 'turtle: ' + responses.turtle + ', ';
   testThing += 'artist: ' + responses.artist + ', ';
   testThing += 'pony: ' + responses.pony + ', ';
-  testThing += 'titan: ' + responses.titan + ', ';
+  testThing += 'titan: ' + responses.titan;
   document.getElementById("test2").innerHTML =  testThing;
     //end test code 
 }
