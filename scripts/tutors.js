@@ -71,7 +71,7 @@ var tutors = [
   },
   {
     name: "Elizabeth",
-    main: ["math"],
+    main: ["math","study skills"],
     subjects: [
       "math",
       "Algebra",
@@ -120,7 +120,7 @@ var tutors = [
   },
   {
     name: "Autumn",
-    main: ["Biology","Writing"],
+    main: ["Biology","writing","study skills"],
     subjects: ["Biology","General Biology"],
     prefsub: ["Biology"],
     cite: [],
