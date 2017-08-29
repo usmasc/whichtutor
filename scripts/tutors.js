@@ -260,17 +260,17 @@ var tutors = [
   },
   {
     name: "Zachary Stewart",
-    main: ["speaking", "writing"],
-    subjects: ["speaking", "writing", "Political Science", "History"],
-    prefsub: ["Political Science"],
-    cite: [],
-    morning: [],
-    turtle: [],
-    artist: [],
-    pony: [],
-    titan: [],
+    main: ["speaking", "writing","study skills"],
+    subjects: ["speaking", "writing", "Political Science", "History","study skills"],
+    prefsub: ["Political Science","History"],
+    cite: ["Turabian"],
+    morning: ['coffee'],
+    turtle: ['Donatello'],
+    artist: ['Michelangelo'],
+    pony: ['Apple Jack'],
+    titan: ['Robin'],
     score: 0,
-    bio: ""
+    bio: "Zach is our graduate assist. He also tutors speaking, writing, and study skills."
   }
 ];
 
@@ -343,12 +343,13 @@ var firstQuestion = {
     "stats",
     "Geography",
     "Psychology",
-    "Research methods"
+    "Research methods",
+    "study skills"
   ]
 };
 
 // questions for writing domain
-var writingQuestions = [
+var studyQuestions = [
   {
     id: "subject",
     question: "What subject do you need help with?",
@@ -360,13 +361,10 @@ var writingQuestions = [
       "Psychology",
       "other"
     ]
-  },
-  {
-    id: "cite",
-    question: "What citation style are you using?",
-    responses: ["APA", "MLA", "Chicago", "Turabian", "other"]
   }
 ];
+
+https://forms.office.com/Pages/ResponsePage.aspx?id=vqQ9fyInLkO_p2QIDR6x3NyshSYib3pLs-mzwzCoKixUOFZSN1lYRkNEUDVQWUkxR0k1RkFJOEk1Ui4u
 
 // questions for speech domain
 var speakingQuestions = [
@@ -546,7 +544,9 @@ function scoreIt() {
     loadSecondQuestions(statsQuestions, "statsQuestions");
   } else if (responses.main == "speaking") {
     loadSecondQuestions(speakingQuestions, "speakingQuestions");
-  } else {
+  } else if (responses.main == "study skills") {
+    loadSecondQuestions(studyQuestions, "studyQuestions");
+  }else {
                       
     //questionArea.innerHTML = '';
     responses.subject = responses.main;
