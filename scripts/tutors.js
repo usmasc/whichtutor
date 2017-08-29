@@ -144,7 +144,7 @@ var tutors = [
     pony: ["Apple Jack"],
     titan: ["Raven"],
     score: 0,
-    bio: "Jonathan tutors in Writing and Spanish. He is a Junior studying English With Licensure to teach. He enjoys reading books and talking about them. "
+    bio: "Jonathan tutors in writing and Spanish. He is a Junior studying English With Licensure to teach. He enjoys reading books and talking about them. "
   },
   {
     name: "Leah",
