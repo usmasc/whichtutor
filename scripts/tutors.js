@@ -349,6 +349,35 @@ var firstQuestion = {
 };
 
 // questions for writing domain
+var writingQuestions = [
+  {
+    id: "subject",
+    question: "What subject do you need help with?",
+    responses: [
+      "English",
+      "History",
+      "Science",
+      "Geography",
+      "Psychology",
+      "Biology",
+      "Political Science",
+      "other"
+    ]
+  }
+    {
+    id: "cite",
+    question: "What is the citation style?",
+    responses: [
+      "APA",
+      "MLA",
+      "CSE",
+      "Turabian",
+      "other"
+    ]
+  },
+];
+
+
 var studyQuestions = [
   {
     id: "subject",
@@ -359,6 +388,8 @@ var studyQuestions = [
       "Science",
       "Geography",
       "Psychology",
+      "Biology",
+      "Political Science",
       "other"
     ]
   }
@@ -395,6 +426,7 @@ var mathQuestions = [
       "business stats",
       "Intermediate Algebra",
       "College Algebra",
+      "Linear Programming",
       "other"
     ]
   }
