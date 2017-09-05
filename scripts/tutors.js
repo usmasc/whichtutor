@@ -363,7 +363,7 @@ var writingQuestions = [
       "Political Science",
       "other"
     ]
-  }
+  },
     {
     id: "cite",
     question: "What is the citation style?",
@@ -374,7 +374,7 @@ var writingQuestions = [
       "Turabian",
       "other"
     ]
-  },
+  }
 ];
 
 
@@ -395,7 +395,7 @@ var studyQuestions = [
   }
 ];
 
-https://forms.office.com/Pages/ResponsePage.aspx?id=vqQ9fyInLkO_p2QIDR6x3NyshSYib3pLs-mzwzCoKixUOFZSN1lYRkNEUDVQWUkxR0k1RkFJOEk1Ui4u
+
 
 // questions for speech domain
 var speakingQuestions = [
