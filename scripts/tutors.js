@@ -49,7 +49,7 @@ var tutors = [
   },
   {
     name: "Dane",
-    main: ["math", "writing"],
+    main: ["math", "writing","Chemistry"],
     subjects: [
       "math",
       "Calculus",
