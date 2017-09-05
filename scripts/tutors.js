@@ -171,16 +171,16 @@ var tutors = [
   {
     name: "Leah",
     main: ["speaking", "writing"],
-    subjects: ["English", "Education"],
-    prefsub: [],
+    subjects: ["English", "Education","writing"],
+    prefsub: ["writing"],
     cite: ["MLA"],
-    morning: ['coffee'],
-    turtle: ['Donatello'],
-    artist: ['Raphael'],
-    pony: ['Apple Jack'],
-    titan: ['Starfire'],
+    morning: ['hot tea','podcast'],
+    turtle: ['Michelangelo'],
+    artist: ['Michelangelo'],
+    pony: ['Rainbow Dash'],
+    titan: ['Raven'],
     score: 0,
-    bio: "Leah is a studying to be a high school English teacher."
+    bio: "Leah is a English Education major who enjoys sleeping, podcasts, hangout out with friends and shopping for pens."
   },
   {
     name: "Samantha",
