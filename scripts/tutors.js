@@ -215,17 +215,17 @@ var tutors = [
   {
     name: "Teneala",
     main: ["math", "Spanish", "Computer Science"],
-    subjects: ["math", "Calculus", "Algebra", "Business Calculus", "Spanish"],
-    prefsub: [],
+    subjects: ["math", "Calculus", "Algebra", "Business Calculus","Trigonometry","Linear Programming", "Spanish"],
+    prefsub: ["math", "Calculus", "Algebra", "Business Calculus", "Trigonometry", "Spanish"],
     cite: [],
-    morning: [],
-    turtle: ['Leonardo'],
+    morning: ["morning run"],
+    turtle: ['Michelangelo'],
     artist: ['Donatello'],
-    pony: ['Rarity'],
-    titan: ['Starfire'],
+    pony: ['Apple Jack'],
+    titan: ['Robin'],
     score: 0,
     bio:
-      "Teneala is majoring in Computer Science with a double minor in Spanish and Math as part of her plot for world domination. We're not kidding."
+      "Teneala is majoring in Computer Science and Spanish with a minor in Math as part of her plot for world domination. We're not kidding."
   },
   {
     name: "Veronica",
