@@ -16,7 +16,7 @@ var tutors = [
     titan: ['Raven'],
     score: 0,
     bio:
-      "Adam is a Geography major. He tutors Geography, speaking, and writing. He also likes to code. He's a Veteran. He's involved with GTU and Southern Connection. Adam prefers that you hit reply and not reply all when you reply to emails."
+      "Adam is a Geography major. He tutors Geography, speaking, and writing. He also likes to code. He's a Veteran. He's involved with GTU, EcoEagles, SGA, and Southern Connection. Adam prefers that you hit reply and not reply all when you reply to emails."
   },
   {
     name: "Aleysh",
@@ -31,7 +31,7 @@ var tutors = [
     titan: ['Raven'],
     score: 0,
     bio:
-      "Aleysh is a Chemistry tutor. She is also involved in Sigma Mu: Science and Math Club"
+      "Aleysh is a Chemistry tutor. She is also involved in Sigma Mu: Science and Math Club."
   },
   {
     name: "Casey",
@@ -152,7 +152,7 @@ var tutors = [
     pony: ['Twilight Sparkle'],
     titan: ['Starfire'],
     score: 0,
-    bio: "Autumn is an artist. She tutors writing, biology, and study skills."
+    bio: "Autumn tutors writing, biology, and study skills. As an ocean lover and a shark advocate, she wants you to know that Jaws is propaganda. Autumn is an ESFJ on the Myers-Briggs."
   },
   {
     name: "Jonathan",
@@ -180,7 +180,7 @@ var tutors = [
     pony: ['Rainbow Dash'],
     titan: ['Raven'],
     score: 0,
-    bio: "Leah is a English Education major who enjoys sleeping, podcasts, hangout out with friends and shopping for pens."
+    bio: "Leah is an English Education major who enjoys sleeping, podcasts, hangout out with friends, and shopping for pens."
   },
   {
     name: "Samantha",
@@ -292,7 +292,7 @@ var tutors = [
     pony: ['Apple Jack'],
     titan: ['Robin'],
     score: 0,
-    bio: "Zach is our graduate assist. He also tutors speaking, writing, and study skills."
+    bio: "Zach is one of our graduate assistants. He also tutors speaking, writing, and study skills."
   }
 ];
 
