@@ -7,7 +7,7 @@ var tutors = [
     name: "Adam",
     main: ["Geography", "speaking", "writing"],
     subjects: ["Geography"],
-    prefsub: ["Geography"],
+    prefsub: ["Geography","speaking"],
     cite: [],
     morning: ['morning run'],
     turtle: ['Raphael'],
