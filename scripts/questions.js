@@ -22,13 +22,6 @@ var Questions = [
     id: "pony",
     question: "Pick a pony:",
     responses: [
-      "Apple Jack",
-      "Fluttershy",
-      "Pinkie Pie",
-      "Rainbow Dash",
-      "Rarity",
-      "Twilight Sparkle"
-    ]
   },
   {
     id: "titan",
@@ -57,14 +50,14 @@ var firstQuestion = {
   id: "main",
   question: "What do you need help with?",
   responses: [
-    "writing",
-    "math",
-    "speaking",
+    "Writing",
+    "Math",
+    "Speaking",
     "Spanish",
     "Chemistry",
     "Biology",
     "Computer Science",
-    "stats",
+    "Stats",
     "Geography",
     "Psychology",
     "Research methods",
@@ -137,17 +130,17 @@ var speakingQuestions = [
   }
 ];
 
-// questions for math domain
+// questions for Math domain
 var mathQuestions = [
   {
     id: "subject",
-    cat: "math",
+    cat: "Math",
     question: "What subject do you need help with?",
     responses: [
       "Calculus",
       "Trigonometry",
       "Business Calculus",
-      "business stats",
+      "Business Stats",
       "Intermediate Algebra",
       "College Algebra",
       "Linear Programming",
@@ -159,9 +152,9 @@ var mathQuestions = [
 var statsQuestions = [
   {
     id: "subject",
-    cat: "stats",
+    cat: "Stats",
     question: "What subject do you need help with?",
-    responses: ["prob and stats", "business stats", "SPSS"]
+    responses: ["Prob and Stats", "Business Stats", "SPSS"]
   }
 ];
 
