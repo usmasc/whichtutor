@@ -5,9 +5,9 @@ var OQpoints = 1; // other question points
 var tutors = [
   {
     name: "Adam",
-    main: ["Geography", "speaking", "writing"],
+    main: ["Geography", "Speaking", "Writing"],
     subjects: ["Geography"],
-    prefsub: ["Geography","speaking"],
+    prefsub: ["Geography","Speaking"],
     cite: [],
     morning: ['morning run'],
     turtle: ['Raphael'],
@@ -16,7 +16,7 @@ var tutors = [
     titan: ['Raven'],
     score: 0,
     bio:
-      "Adam is a Geography major. He tutors Geography, speaking, and writing. He also likes to code. He's a Veteran. He's involved with GTU, EcoEagles, SGA, and Southern Connection. Adam prefers that you hit reply and not reply all when you reply to emails."
+      "Adam is a Geography major. He tutors Geography, Speaking, and writing. He also likes to code. He's a Veteran. He's involved with GTU, EcoEagles, SGA, and Southern Connection. Adam prefers that you hit reply and not reply all when you reply to emails."
   },
   {
     name: "Aleysh",
@@ -49,9 +49,9 @@ var tutors = [
   },
   {
     name: "Dane",
-    main: ["math", "writing","Chemistry"],
+    main: ["Math", "Writing","Chemistry"],
     subjects: [
-      "math",
+      "Math",
       "Calculus",
       "Algebra",
       "Intermediate Algebra",
@@ -63,11 +63,11 @@ var tutors = [
       "College Algebra",
       "Linear Programming",
       "Algebra",
-      "writing",
+      "Writing",
       "Chemistry"
     ],
     prefsub: [
-      "math",
+      "Math",
       "Calculus",
       "Algebra",
       "Intermediate Algebra",
@@ -79,7 +79,7 @@ var tutors = [
       "College Algebra",
       "Linear Programming",
       "Algebra",
-      "writing",
+      "Writing",
       "Chemistry"],
     cite: [],
     morning: ['bacon'],
@@ -93,9 +93,9 @@ var tutors = [
   },
   {
     name: "Elizabeth",
-    main: ["math","study skills"],
+    main: ["Math","Study Skills"],
     subjects: [
-      "math",
+      "Math",
       "Algebra",
       "Intermediate Algebra",
       "College Algebra",
@@ -142,9 +142,9 @@ var tutors = [
   },
   {
     name: "Autumn",
-    main: ["Biology","writing","study skills"],
-    subjects: ["Biology","General Biology","writing"],
-    prefsub: ["Biology","writing"],
+    main: ["Biology","Writing","Study Skills"],
+    subjects: ["Biology","General Biology","Writing"],
+    prefsub: ["Biology","Writing"],
     cite: ['CSE','MLA'],
     morning: ['coffee',"shower"],
     turtle: ['Michelangelo'],
@@ -156,9 +156,9 @@ var tutors = [
   },
   {
     name: "Jonathan",
-    main: ["writing", "Spanish"],
-    subjects: ["speaking", "writing", "Spanish"],
-    prefsub: ["writing","Spanish"],
+    main: ["Writing", "Spanish"],
+    subjects: ["Speaking", "Writing", "Spanish"],
+    prefsub: ["Writing","Spanish"],
     cite: ["MLA"],
     morning: ["coffee"],
     turtle: ["Donatello"],
@@ -170,9 +170,9 @@ var tutors = [
   },
   {
     name: "Leah",
-    main: ["speaking", "writing"],
-    subjects: ["English", "Education","writing"],
-    prefsub: ["writing"],
+    main: ["Speaking", "Writing"],
+    subjects: ["English", "Education","Writing"],
+    prefsub: ["Writing"],
     cite: ["MLA"],
     morning: ['hot tea','podcast'],
     turtle: ['Michelangelo'],
@@ -198,9 +198,9 @@ var tutors = [
   },
   {
     name: "Saurabh",
-    main: ["stats", "SPSS", "Research methods"],
-    subjects: ["stats", "SPSS", "Research methods"],
-    prefsub: ["stats", "SPSS", "Research methods"],
+    main: ["Stats", "SPSS", "Research methods"],
+    subjects: ["Stats", "SPSS", "Research methods"],
+    prefsub: ["Stats", "SPSS", "Research methods"],
     cite: [],
     morning: ['morning run'],
     turtle: ['Donatello'],
@@ -212,18 +212,18 @@ var tutors = [
   },
   {
     name: "Scott",
-    main: ["math", "stats"],
+    main: ["Math", "Stats"],
     subjects: [
-      "math",
-      "stats",
+      "Math",
+      "Stats",
       "Calculus",
       "Algebra",
       "Intermediate Algebra",
       "College Algebra",
       "Business Calculus",
-      "business stats"
+      "Business Stats"
     ],
-    prefsub: ["Business Calculus", "business stats"],
+    prefsub: ["Business Calculus", "Business Stats"],
     cite: ["APA"],
     morning: ["bacon"],
     turtle: ["Donatello"],
@@ -236,9 +236,9 @@ var tutors = [
   },
   {
     name: "Teneala",
-    main: ["math", "Spanish", "Computer Science"],
-    subjects: ["math", "Calculus", "Algebra", "Business Calculus","Trigonometry","Linear Programming", "Spanish"],
-    prefsub: ["math", "Calculus", "Algebra", "Business Calculus", "Trigonometry", "Spanish"],
+    main: ["Math", "Spanish", "Computer Science"],
+    subjects: ["Math", "Calculus", "Algebra", "Business Calculus","Trigonometry","Linear Programming", "Spanish"],
+    prefsub: ["Math", "Calculus", "Algebra", "Business Calculus", "Trigonometry", "Spanish"],
     cite: [],
     morning: ["morning run"],
     turtle: ['Michelangelo'],
@@ -251,8 +251,8 @@ var tutors = [
   },
   {
     name: "Veronica",
-    main: ["math"],
-    subjects: ["math", "Calculus", "Algebra", "Business Calculus"],
+    main: ["Math"],
+    subjects: ["Math", "Calculus", "Algebra", "Business Calculus"],
     prefsub: [],
     cite: [],
     morning: [],
@@ -266,8 +266,8 @@ var tutors = [
   },
   {
     name: "Zachary Ransom",
-    main: ["speaking", "writing", "Psychology"],
-    subjects: ["speaking", "writing", "Psychology", "Academic Research"],
+    main: ["Speaking", "Writing", "Psychology"],
+    subjects: ["Speaking", "Writing", "Psychology", "Academic Research"],
     prefsub: ["Psychology"],
     cite: ["APA"],
     morning: ["coffee", "bacon"],
@@ -282,8 +282,8 @@ var tutors = [
   },
   {
     name: "Zachary Stewart",
-    main: ["speaking", "writing","study skills"],
-    subjects: ["speaking", "writing", "Political Science", "History","study skills"],
+    main: ["Speaking", "Writing","Study Skills"],
+    subjects: ["Speaking", "Writing", "Political Science", "History","Study Skills"],
     prefsub: ["Political Science","History"],
     cite: ["Turabian"],
     morning: ['coffee'],
@@ -355,18 +355,18 @@ var firstQuestion = {
   id: "main",
   question: "What do you need help with?",
   responses: [
-    "writing",
-    "math",
-    "speaking",
+    "Writing",
+    "Math",
+    "Speaking",
     "Spanish",
     "Chemistry",
     "Biology",
     "Computer Science",
-    "stats",
+    "Stats",
     "Geography",
     "Psychology",
     "Research methods",
-    "study skills"
+    "Study Skills"
   ]
 };
 
@@ -439,13 +439,13 @@ var speakingQuestions = [
 var mathQuestions = [
   {
     id: "subject",
-    cat: "math",
+    cat: "Math",
     question: "What subject do you need help with?",
     responses: [
       "Calculus",
       "Trigonometry",
       "Business Calculus",
-      "business stats",
+      "Business Stats",
       "Intermediate Algebra",
       "College Algebra",
       "Linear Programming",
@@ -457,9 +457,9 @@ var mathQuestions = [
 var statsQuestions = [
   {
     id: "subject",
-    cat: "stats",
+    cat: "Stats",
     question: "What subject do you need help with?",
-    responses: ["prob and stats", "business stats", "SPSS"]
+    responses: ["Prob and Stats", "Business Stats", "SPSS"]
   }
 ];
 
@@ -556,7 +556,7 @@ function scoreIt() {
       if (tutors[t].prefsub.indexOf(responses.subject) > -1) {
         tutors[t].score += prefPoints;
       }
-      if (responses.main == "writing") {
+      if (responses.main == "Writing") {
         if (tutors[t].cite.indexOf(responses.cite) > -1) {
           tutors[t].score += 10;
         }
@@ -589,17 +589,17 @@ function scoreIt() {
   
  function secondSetGo() {
 
-   if (responses.main == "writing") {
+   if (responses.main == "Writing") {
 
     loadSecondQuestions(writingQuestions, "writingQuestions");
 
-  } else if (responses.main == "math") {
+  } else if (responses.main == "Math") {
     loadSecondQuestions(mathQuestions, "mathQuestions");
-  } else if (responses.main == "stats") {
+  } else if (responses.main == "Stats") {
     loadSecondQuestions(statsQuestions, "statsQuestions");
-  } else if (responses.main == "speaking") {
+  } else if (responses.main == "Speaking") {
     loadSecondQuestions(speakingQuestions, "speakingQuestions");
-  } else if (responses.main == "study skills") {
+  } else if (responses.main == "Study Skills") {
     loadSecondQuestions(studyQuestions, "studyQuestions");
   }else {
                       
@@ -618,7 +618,7 @@ function scoreIt() {
   // test code
   var testThing = 'main: ' + responses.main + ', ';
   testThing += 'subject: ' + responses.subject + ', ';
-  if (responses.main == 'writing') {
+  if (responses.main == 'Writing') {
     testThing += 'citation: ' + responses.cite + ', ';
   }
   testThing += 'morning: ' + responses.morning + ', ';
