@@ -117,7 +117,7 @@ var tutors = [
     morning: ["morning run"],
     turtle: ["Leonardo"],
     artist: ["Donatello"],
-    pony: ["Twilight SParkle"],
+    pony: ["Twilight Sparkle"],
     titan: ["Cyborg"],
     score: 0,
     bio: "Grace tutors chemistry. It's true. She does."
