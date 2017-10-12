@@ -331,7 +331,7 @@ var Questions = [
   {
     id: "titan",
     question: "Pick a Teen Titan:",
-    responses: ["Beast Boy", "Cyborg", "Raven", "Robin", "Starfire"]
+    responses: ["Aqualad","Beast Boy", "Cyborg", "Raven", "Robin", "Starfire"]
   }
 ];
 
